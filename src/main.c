@@ -28,6 +28,10 @@
  *
  */
 #include "S32K314.h"
+#include "Mcu.h"
+#include "Port.h"
+#include "Dio_Cfg.h"
+#include "Dio.h"
 
 #include <stdio.h>
 
@@ -55,20 +59,46 @@
 
 int counter, accumulator = 0, limit_value = 1000000;
 
-int main(void) {
-    counter = 0;
-
-    for (;;) {
-        counter++;
-
-        if (counter >= limit_value) {
-            __ASM_VOLATILE ("svc 0");
-            counter = 0;
-        }
+void TestDelay(uint32 delay);
+void TestDelay(uint32 delay)
+{
+    static volatile uint32 DelayTimer = 0;
+    while(DelayTimer<delay)
+    {
+        DelayTimer++;
     }
-    /* to avoid the warning message for GHS and IAR: statement is unreachable*/
-    __NO_RETURN__
-    return 0;
+    DelayTimer=0;
+}
+
+
+int main(void) {
+    uint8 count = 0U;
+
+    /* Initialize the Mcu driver */
+#if (MCU_PRECOMPILE_SUPPORT == STD_ON)
+    Mcu_Init(NULL_PTR);
+#elif (MCU_PRECOMPILE_SUPPORT == STD_OFF)
+    Mcu_Init(&Mcu_Config);
+#endif /* (MCU_PRECOMPILE_SUPPORT == STD_ON) */
+
+    /* Initialize the clock tree and apply PLL as system clock */
+    Mcu_InitClock(McuClockSettingConfig_0);
+
+    /* Apply a mode configuration */
+    Mcu_SetMode(McuModeSettingConf_0);
+
+    /* Initialize all pins using the Port driver */
+    Port_Init(&Port_Config);
+
+    while (1)
+    {
+        Dio_WriteChannel(DioConf_DioChannel_DioChannel_LED3_GREEN_PB14, STD_HIGH);
+        TestDelay(500000);
+        Dio_WriteChannel(DioConf_DioChannel_DioChannel_LED3_GREEN_PB14, STD_LOW);
+        TestDelay(500000);
+    }
+
+    return (0U);
 }
 
 __INTERRUPT_SVC void SVC_Handler() {

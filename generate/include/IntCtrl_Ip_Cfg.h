@@ -73,11 +73,15 @@
 #define PLATFORM_START_SEC_CONFIG_DATA_UNSPECIFIED
 #include "Platform_MemMap.h"
 
+/* Definition of the configuration structure for Platform IPW */
+extern const IntCtrl_Ip_CtrlConfigType intCtrlConfig;
+
 
 
 /* Declaration of interrupt handlers 
  * NOTE: For application specific handlers, these functions must be implemented in the application code!
  */
+extern void Uart0_handler(void);
 
 #ifdef  PLATFORM_IP_ENABLE_INT_CTRL
 #if  (PLATFORM_IP_ENABLE_INT_CTRL == STD_ON)

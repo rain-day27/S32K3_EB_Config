@@ -3,3 +3,4 @@
 *.o
 *,d
 *.su
+/Debug_FLASH/

@@ -8,8 +8,8 @@
 					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="com.freescale.s32ds.cdt.core.errorParsers.S32DSGNULinkerErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.freescale.s32ds.cdt.core.errorParsers.S32DSGNULinkerErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
@@ -159,8 +159,8 @@
 								<inputType id="com.freescale.s32ds.cross.gnu.tool.assembler.inputType.asmfile.1894761022" superClass="com.freescale.s32ds.cross.gnu.tool.assembler.inputType.asmfile"/>
 							</tool>
 							<tool id="com.nxp.s32ds.cle.arm.mbs.arm32.bare.tool.createflash.588661706" name="Standard S32DS Create Flash Image" superClass="com.nxp.s32ds.cle.arm.mbs.arm32.bare.tool.createflash">
-								<option id="com.freescale.s32ds.cross.gnu.option.createflash.textsection.211402881" superClass="com.freescale.s32ds.cross.gnu.option.createflash.textsection" useByScannerDiscovery="false" value="false" valueType="boolean"/>
-								<option id="com.freescale.s32ds.cross.gnu.option.createflash.choice.643718293" superClass="com.freescale.s32ds.cross.gnu.option.createflash.choice" useByScannerDiscovery="false" value="com.freescale.s32ds.cross.gnu.option.createflash.choice.ihex" valueType="enumerated"/>
+								<option id="com.freescale.s32ds.cross.gnu.option.createflash.textsection.211402881" name="Section: -j .text" superClass="com.freescale.s32ds.cross.gnu.option.createflash.textsection" useByScannerDiscovery="false" value="false" valueType="boolean"/>
+								<option id="com.freescale.s32ds.cross.gnu.option.createflash.choice.643718293" name="Output file format (-O)" superClass="com.freescale.s32ds.cross.gnu.option.createflash.choice" useByScannerDiscovery="false" value="com.freescale.s32ds.cross.gnu.option.createflash.choice.ihex" valueType="enumerated"/>
 							</tool>
 							<tool id="com.freescale.s32ds.cross.gnu.tool.createlisting.1668932233" name="Standard S32DS Create Listing" superClass="com.freescale.s32ds.cross.gnu.tool.createlisting">
 								<option id="com.freescale.s32ds.cross.gnu.option.createlisting.source.449853439" name="Display source (--source|-S)" superClass="com.freescale.s32ds.cross.gnu.option.createlisting.source" value="true" valueType="boolean"/>
@@ -178,7 +178,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="Pwm_TS_T40D34M50I0R0|Zipwire_TS_T40D34M50I0R0|WdgIf_TS_T40D34M50I0R0|Wdg_TS_T40D34M50I0R0|Uart_TS_T40D34M50I0R0|Spi_TS_T40D34M50I0R0|Sent_TS_T40D34M50I0R0|Rm_TS_T40D34M50I0R0|Os_TS_T40D34M50I0R0|Ocu_TS_T40D34M50I0R0|Ocotp_TS_T40D34M50I0R0|MemIf_TS_T40D34M50I0R0|MemAcc_TS_T40D34M50I0R0|Mem_43_INFLS_TS_T40D34M50I0R0|Mem_43_EXFLS_TS_T40D34M50I0R0|Mem_43_EEP_TS_T40D34M50I0R0|Mcl_TS_T40D34M50I0R0|LinTrcv_43_AE_TS_T40D34M50I0R0|LinIf_TS_T40D34M50I0R0|Lin_43_LPUART_FLEXIO_TS_T40D34M50I0R0|Icu_TS_T40D34M50I0R0|I2s_TS_T40D34M50I0R0|I2c_TS_T40D34M50I0R0|Gpt_TS_T40D34M50I0R0|Gdu_TS_T40D34M50I0R0|Fee_TS_T40D34M50I0R0|EthTrcv_TS_T40D34M50I0R0|EthSwt_TS_T40D34M50I0R0|EthIf_TS_T40D34M50I0R0|Eth_43_GMAC_TS_T40D34M50I0R0|EcuM_TS_T40D34M50I0R0|Dpga_TS_T40D34M50I0R0|CanTrcv_43_AE_TS_T40D34M50I0R0|CanIf_TS_T40D34M50I0R0|Can_43_FLEXCAN_TS_T40D34M50I0R0|Crc_TS_T40D34M50I0R0|Ae_TS_T40D34M50I0R0|Adc_TS_T40D34M50I0R0" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="MCAL"/>
+						<entry excluding="Pwm_TS_T40D34M50I0R0|Zipwire_TS_T40D34M50I0R0|WdgIf_TS_T40D34M50I0R0|Wdg_TS_T40D34M50I0R0|Spi_TS_T40D34M50I0R0|Sent_TS_T40D34M50I0R0|Rm_TS_T40D34M50I0R0|Os_TS_T40D34M50I0R0|Ocu_TS_T40D34M50I0R0|Ocotp_TS_T40D34M50I0R0|MemIf_TS_T40D34M50I0R0|MemAcc_TS_T40D34M50I0R0|Mem_43_INFLS_TS_T40D34M50I0R0|Mem_43_EXFLS_TS_T40D34M50I0R0|Mem_43_EEP_TS_T40D34M50I0R0|Mcl_TS_T40D34M50I0R0|LinTrcv_43_AE_TS_T40D34M50I0R0|LinIf_TS_T40D34M50I0R0|Lin_43_LPUART_FLEXIO_TS_T40D34M50I0R0|Icu_TS_T40D34M50I0R0|I2s_TS_T40D34M50I0R0|I2c_TS_T40D34M50I0R0|Gpt_TS_T40D34M50I0R0|Gdu_TS_T40D34M50I0R0|Fee_TS_T40D34M50I0R0|EthTrcv_TS_T40D34M50I0R0|EthSwt_TS_T40D34M50I0R0|EthIf_TS_T40D34M50I0R0|Eth_43_GMAC_TS_T40D34M50I0R0|EcuM_TS_T40D34M50I0R0|Dpga_TS_T40D34M50I0R0|CanTrcv_43_AE_TS_T40D34M50I0R0|CanIf_TS_T40D34M50I0R0|Can_43_FLEXCAN_TS_T40D34M50I0R0|Crc_TS_T40D34M50I0R0|Ae_TS_T40D34M50I0R0|Adc_TS_T40D34M50I0R0" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="MCAL"/>
 						<entry excluding="Debugger|Linker_Files" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Project_Settings"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="generate"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>

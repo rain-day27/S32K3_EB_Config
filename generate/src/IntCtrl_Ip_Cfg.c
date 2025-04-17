@@ -68,6 +68,21 @@ extern "C" {
 #define PLATFORM_START_SEC_CONFIG_DATA_UNSPECIFIED
 #include "Platform_MemMap.h"
 
+    
+/* List of configurations for interrupts */
+static const IntCtrl_Ip_IrqConfigType aIrqConfiguration[] = {
+    {LPUART0_IRQn, (boolean)TRUE, 0U, &Uart0_handler},
+};
+
+/* Configuration structure for interrupt controller */
+const IntCtrl_Ip_CtrlConfigType intCtrlConfig = {
+    1U,
+    
+    
+    aIrqConfiguration
+    
+};
+    
 #define PLATFORM_STOP_SEC_CONFIG_DATA_UNSPECIFIED
 #include "Platform_MemMap.h"
 

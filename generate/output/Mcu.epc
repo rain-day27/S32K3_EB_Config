@@ -1142,6 +1142,36 @@
                       </PARAMETER-VALUES>
                     </ECUC-CONTAINER-VALUE>
                     <ECUC-CONTAINER-VALUE>
+                      <SHORT-NAME>UART0_CLK</SHORT-NAME>
+                      <INDEX>3</INDEX>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuClockSettingConfig/McuClockReferencePoint</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuClockSettingConfig/McuClockReferencePoint/McuClockFrequencySelect</DEFINITION-REF>
+                          <VALUE>AIPS_PLAT_CLK</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuClockSettingConfig/McuClockReferencePoint/McuClockReferencePointFrequency</DEFINITION-REF>
+                          <VALUE>8.0E7</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE>
+                      <SHORT-NAME>CAN_0_2_CLK</SHORT-NAME>
+                      <INDEX>4</INDEX>
+                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuClockSettingConfig/McuClockReferencePoint</DEFINITION-REF>
+                      <PARAMETER-VALUES>
+                        <ECUC-TEXTUAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuClockSettingConfig/McuClockReferencePoint/McuClockFrequencySelect</DEFINITION-REF>
+                          <VALUE>FLEXCAN_PE_CLK0_2</VALUE>
+                        </ECUC-TEXTUAL-PARAM-VALUE>
+                        <ECUC-NUMERICAL-PARAM-VALUE>
+                          <DEFINITION-REF DEST="ECUC-FLOAT-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuClockSettingConfig/McuClockReferencePoint/McuClockReferencePointFrequency</DEFINITION-REF>
+                          <VALUE>8.0E7</VALUE>
+                        </ECUC-NUMERICAL-PARAM-VALUE>
+                      </PARAMETER-VALUES>
+                    </ECUC-CONTAINER-VALUE>
+                    <ECUC-CONTAINER-VALUE>
                       <SHORT-NAME>McuFIRC</SHORT-NAME>
                       <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuClockSettingConfig/McuFIRC</DEFINITION-REF>
                       <PARAMETER-VALUES>
@@ -1759,7 +1789,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -1778,7 +1808,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -1816,7 +1846,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -1835,7 +1865,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -1854,7 +1884,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -1873,7 +1903,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -1892,7 +1922,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -1911,7 +1941,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -1930,7 +1960,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -1968,7 +1998,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -1987,7 +2017,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -2006,7 +2036,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -2025,7 +2055,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -2044,7 +2074,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -2063,7 +2093,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -2082,7 +2112,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -2101,7 +2131,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -2120,7 +2150,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -2139,7 +2169,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -2158,7 +2188,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -2177,7 +2207,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -2196,7 +2226,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -2215,7 +2245,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -2253,7 +2283,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -2272,7 +2302,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -2329,7 +2359,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -2348,7 +2378,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -2367,7 +2397,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -2386,7 +2416,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -2462,7 +2492,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -2538,7 +2568,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -2557,7 +2587,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -2576,7 +2606,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -2595,7 +2625,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -2614,7 +2644,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -2633,7 +2663,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -2652,7 +2682,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -2671,7 +2701,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -2690,7 +2720,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -2709,7 +2739,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -2728,7 +2758,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -2747,7 +2777,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -2766,7 +2796,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -2785,7 +2815,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -2804,7 +2834,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -2823,7 +2853,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -2842,7 +2872,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -2861,7 +2891,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -2880,7 +2910,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -2899,7 +2929,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -2918,7 +2948,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -2937,7 +2967,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -2956,7 +2986,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -2975,7 +3005,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -3032,7 +3062,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -3051,7 +3081,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -3089,7 +3119,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -3108,7 +3138,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -3127,7 +3157,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -3146,7 +3176,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -3165,7 +3195,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -3184,7 +3214,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -3203,7 +3233,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -3222,7 +3252,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -3241,7 +3271,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -3260,7 +3290,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -3279,7 +3309,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -3298,7 +3328,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -3317,7 +3347,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -3336,7 +3366,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -3355,7 +3385,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -3374,7 +3404,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -3393,7 +3423,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -3412,7 +3442,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -3431,7 +3461,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -3450,7 +3480,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -3469,7 +3499,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -3488,7 +3518,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -3507,7 +3537,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -3526,7 +3556,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -3545,7 +3575,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -3564,7 +3594,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -3583,7 +3613,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -3602,7 +3632,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -3621,7 +3651,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -3640,7 +3670,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -3659,7 +3689,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -3678,7 +3708,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -3697,7 +3727,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -3716,7 +3746,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>
@@ -3735,7 +3765,7 @@
                             </ECUC-TEXTUAL-PARAM-VALUE>
                             <ECUC-NUMERICAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralClockEnable</DEFINITION-REF>
-                              <VALUE>0</VALUE>
+                              <VALUE>1</VALUE>
                             </ECUC-NUMERICAL-PARAM-VALUE>
                             <ECUC-TEXTUAL-PARAM-VALUE>
                               <DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/TS_T40D34M50I0R0/Mcu/McuModuleConfiguration/McuModeSettingConf/McuPartitionConfiguration/McuPeripheral/McuPeripheralName</DEFINITION-REF>

@@ -1,8 +1,8 @@
 /*==================================================================================================
 *   Project              : RTD AUTOSAR 4.7
 *   Platform             : CORTEXM
-*   Peripheral           : SIUL2
-*   Dependencies         : none
+*   Peripheral           : FLEXIO
+*   Dependencies         : 
 *
 *   Autosar Version      : 4.7.0
 *   Autosar Revision     : ASR_REL_4_7_REV_0000
@@ -22,126 +22,126 @@
 ==================================================================================================*/
 
 /**
-*   @file    Tspc_Port_Ip_PBcfg.c
-*
-*   @addtogroup Port_CFG
+*   @file
+*   @defgroup flexio_uart_tx_ip Flexio UART IPL
+*   @addtogroup  flexio_uart_tx_ip Flexio UART IPL
 *   @{
 */
+
 
 #ifdef __cplusplus
 extern "C"{
 #endif
 
 /*==================================================================================================
-*                                          INCLUDE FILES
+*                                        INCLUDE FILES
 * 1) system and project includes
 * 2) needed interfaces from external units
 * 3) internal and external interfaces from this unit
 ==================================================================================================*/
-#include "Tspc_Port_Ip.h"
 
-
-
-/*==================================================================================================
-*                                 SOURCE FILE VERSION INFORMATION
-==================================================================================================*/
-#define TSPC_PORT_IP_VENDOR_ID_PBCFG_C                       43
-#define TSPC_PORT_IP_AR_RELEASE_MAJOR_VERSION_PBCFG_C        4
-#define TSPC_PORT_IP_AR_RELEASE_MINOR_VERSION_PBCFG_C        7
-#define TSPC_PORT_IP_AR_RELEASE_REVISION_VERSION_PBCFG_C     0
-#define TSPC_PORT_IP_SW_MAJOR_VERSION_PBCFG_C                5
-#define TSPC_PORT_IP_SW_MINOR_VERSION_PBCFG_C                0
-#define TSPC_PORT_IP_SW_PATCH_VERSION_PBCFG_C                0
-
-/*==================================================================================================
-*                                       FILE VERSION CHECKS
-==================================================================================================*/
-/* Check if Tspc_Port_Ip_PBcfg.c and Tspc_Port_Ip.h are of the same vendor */
-#if (TSPC_PORT_IP_VENDOR_ID_PBCFG_C != TSPC_PORT_IP_VENDOR_ID_H)
-    #error "Tspc_Port_Ip_PBcfg.c and Tspc_Port_Ip.h have different vendor ids"
+#include "Flexio_Uart_Ip_Cfg.h"
+#include "Std_Types.h"
+#if (FLEXIO_UART_IP_HAS_DMA_ENABLED == STD_ON)
+#include "Dma_Ip.h"
 #endif
-/* Check if Tspc_Port_Ip_PBcfg.c and Tspc_Port_Ip.h are of the same Autosar version */
-#if ((TSPC_PORT_IP_AR_RELEASE_MAJOR_VERSION_PBCFG_C    != TSPC_PORT_IP_AR_RELEASE_MAJOR_VERSION_H) || \
-     (TSPC_PORT_IP_AR_RELEASE_MINOR_VERSION_PBCFG_C    != TSPC_PORT_IP_AR_RELEASE_MINOR_VERSION_H) || \
-     (TSPC_PORT_IP_AR_RELEASE_REVISION_VERSION_PBCFG_C != TSPC_PORT_IP_AR_RELEASE_REVISION_VERSION_H) \
+/*==================================================================================================
+*                              SOURCE FILE VERSION INFORMATION
+==================================================================================================*/
+
+#define FLEXIO_UART_IP_PBCFG_VENDOR_ID_C                     43
+#define FLEXIO_UART_IP_PBCFG_AR_RELEASE_MAJOR_VERSION_C      4
+#define FLEXIO_UART_IP_PBCFG_AR_RELEASE_MINOR_VERSION_C      7
+#define FLEXIO_UART_IP_PBCFG_AR_RELEASE_REVISION_VERSION_C   0
+#define FLEXIO_UART_IP_PBCFG_SW_MAJOR_VERSION_C              5
+#define FLEXIO_UART_IP_PBCFG_SW_MINOR_VERSION_C              0
+#define FLEXIO_UART_IP_PBCFG_SW_PATCH_VERSION_C              0
+
+/*==================================================================================================
+*                                     FILE VERSION CHECKS
+==================================================================================================*/
+
+/* Checks against Flexio_Uart_Ip_Cfg.h */
+#if (FLEXIO_UART_IP_PBCFG_VENDOR_ID_C != FLEXIO_UART_IP_CFG_VENDOR_ID)
+    #error "Flexio_Uart_Ip_PBcfg.c and Flexio_Uart_Ip_Cfg.h have different vendor ids"
+#endif
+#if ((FLEXIO_UART_IP_PBCFG_AR_RELEASE_MAJOR_VERSION_C    != FLEXIO_UART_IP_CFG_AR_RELEASE_MAJOR_VERSION) || \
+     (FLEXIO_UART_IP_PBCFG_AR_RELEASE_MINOR_VERSION_C    != FLEXIO_UART_IP_CFG_AR_RELEASE_MINOR_VERSION) || \
+     (FLEXIO_UART_IP_PBCFG_AR_RELEASE_REVISION_VERSION_C != FLEXIO_UART_IP_CFG_AR_RELEASE_REVISION_VERSION) \
     )
-    #error "AutoSar Version Numbers of Tspc_Port_Ip_PBcfg.c and Tspc_Port_Ip.h are different"
+     #error "AUTOSAR Version Numbers of Flexio_Uart_Ip_PBcfg.c and Flexio_Uart_Ip_Cfg.h are different"
 #endif
-/* Check if Tspc_Port_Ip_PBcfg.c and Tspc_Port_Ip.h are of the same software version */
-#if ((TSPC_PORT_IP_SW_MAJOR_VERSION_PBCFG_C != TSPC_PORT_IP_SW_MAJOR_VERSION_H) || \
-     (TSPC_PORT_IP_SW_MINOR_VERSION_PBCFG_C != TSPC_PORT_IP_SW_MINOR_VERSION_H) || \
-     (TSPC_PORT_IP_SW_PATCH_VERSION_PBCFG_C != TSPC_PORT_IP_SW_PATCH_VERSION_H)    \
+#if ((FLEXIO_UART_IP_PBCFG_SW_MAJOR_VERSION_C != FLEXIO_UART_IP_CFG_SW_MAJOR_VERSION) || \
+     (FLEXIO_UART_IP_PBCFG_SW_MINOR_VERSION_C != FLEXIO_UART_IP_CFG_SW_MINOR_VERSION) || \
+     (FLEXIO_UART_IP_PBCFG_SW_PATCH_VERSION_C != FLEXIO_UART_IP_CFG_SW_PATCH_VERSION) \
     )
-    #error "Software Version Numbers of Tspc_Port_Ip_PBcfg.c and Tspc_Port_Ip.h are different"
+    #error "Software Version Numbers of Flexio_Uart_Ip_PBcfg.c and Flexio_Uart_Ip_Cfg.h are different"
+#endif
+
+#ifndef DISABLE_MCAL_INTERMODULE_ASR_CHECK
+    /* Check if current file and Std_Types.h header file are of the same Autosar version */
+    #if ((FLEXIO_UART_IP_PBCFG_AR_RELEASE_MAJOR_VERSION_C != STD_AR_RELEASE_MAJOR_VERSION) || \
+         (FLEXIO_UART_IP_PBCFG_AR_RELEASE_MINOR_VERSION_C != STD_AR_RELEASE_MINOR_VERSION) \
+        )
+        #error "AutoSar Version Numbers of Flexio_Uart_Ip_PBcfg.c and Std_Types.h are different"
+    #endif
+    /* Checks against Dma_Ip.h */
+    #if (FLEXIO_UART_IP_HAS_DMA_ENABLED == STD_ON)
+        #if ((FLEXIO_UART_IP_PBCFG_AR_RELEASE_MAJOR_VERSION_C != DMA_IP_AR_RELEASE_MAJOR_VERSION) || \
+             (FLEXIO_UART_IP_PBCFG_AR_RELEASE_MINOR_VERSION_C != DMA_IP_AR_RELEASE_MINOR_VERSION) \
+            )
+            #error "AutoSar Version Numbers of Flexio_Uart_Ip_PBcfg.c and Dma_Ip.h are different"
+        #endif
+    #endif
 #endif
 
 /*==================================================================================================
-*                           LOCAL TYPEDEFS (STRUCTURES, UNIONS, ENUMS)
+*                          LOCAL TYPEDEFS (STRUCTURES, UNIONS, ENUMS)
 ==================================================================================================*/
 
 /*==================================================================================================
-*                                          LOCAL MACROS
+*                                       LOCAL MACROS
 ==================================================================================================*/
 
 /*==================================================================================================
-*                                         LOCAL CONSTANTS
+*                                       GLOBAL FUNCTIONS
 ==================================================================================================*/
 
 /*==================================================================================================
-*                                         LOCAL VARIABLES
-==================================================================================================*/
-/*==================================================================================================
-*                                        GLOBAL CONSTANTS
+*                                   STATE STRUCTURE DECLARATIONS
 ==================================================================================================*/
 
 /*==================================================================================================
-*                                        GLOBAL VARIABLES
-==================================================================================================*/
-
-#define PORT_START_SEC_CONFIG_DATA_UNSPECIFIED
-#include "Port_MemMap.h"
-
-const Tspc_Port_Ip_ObeGroupConfig aTspc_InitConfigArr[NUM_OF_OBE_GROUP_CONFIG] =
-{
-    {
-        .obeGroupSelect = 0,
-        .obeGroupIndex  = 65535
-    },
-    {
-        .obeGroupSelect = 0,
-        .obeGroupIndex  = 65535
-    },
-    {
-        .obeGroupSelect = 0,
-        .obeGroupIndex  = 65535
-    },
-    {
-        .obeGroupSelect = 0,
-        .obeGroupIndex  = 65535
-    }
-};
-
-#define PORT_STOP_SEC_CONFIG_DATA_UNSPECIFIED
-#include "Port_MemMap.h"
-/*==================================================================================================
-*                                        GLOBAL CONSTANTS
+*                                      LOCAL CONSTANTS
 ==================================================================================================*/
 
 /*==================================================================================================
-*                                        GLOBAL VARIABLES
+*                                      LOCAL VARIABLES
 ==================================================================================================*/
 
 /*==================================================================================================
-*                                    LOCAL FUNCTION PROTOTYPES
+*                                      GLOBAL VARIABLES
+==================================================================================================*/
+#define UART_START_SEC_CONFIG_DATA_UNSPECIFIED
+#include "Uart_MemMap.h"
+
+
+
+
+#define UART_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+#include "Uart_MemMap.h"
+/*==================================================================================================
+*                                   LOCAL FUNCTION PROTOTYPES
 ==================================================================================================*/
 
 /*==================================================================================================
-*                                         LOCAL FUNCTIONS
+*                                       LOCAL FUNCTIONS
 ==================================================================================================*/
 
 /*==================================================================================================
-*                                        GLOBAL FUNCTIONS
+*                                       GLOBAL FUNCTIONS
 ==================================================================================================*/
+
 
 #ifdef __cplusplus
 }

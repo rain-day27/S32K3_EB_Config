@@ -1,7 +1,7 @@
 /*==================================================================================================
 *   Project              : RTD AUTOSAR 4.7
 *   Platform             : CORTEXM
-*   Peripheral           : SIUL2
+*   Peripheral           : DMA,CACHE,TRGMUX,LCU,EMIOS,FLEXIO
 *   Dependencies         : none
 *
 *   Autosar Version      : 4.7.0
@@ -11,68 +11,73 @@
 *   Build Version        : S32K3_RTD_5_0_0_D2408_ASR_REL_4_7_REV_0000_20241002
 *
 *   Copyright 2020 - 2024 NXP
+*   
 *
-*   NXP Confidential and Proprietary. This software is owned or controlled by NXP and may only be
-*   used strictly in accordance with the applicable license terms. By expressly
-*   accepting such terms or by downloading, installing, activating and/or otherwise
-*   using the software, you are agreeing that you have read, and that you agree to
-*   comply with and are bound by, such license terms. If you do not agree to be
+*   NXP Confidential and Proprietary. This software is owned or controlled by NXP and may only be 
+*   used strictly in accordance with the applicable license terms.  By expressly 
+*   accepting such terms or by downloading, installing, activating and/or otherwise 
+*   using the software, you are agreeing that you have read, and that you agree to 
+*   comply with and are bound by, such license terms.  If you do not agree to be 
 *   bound by the applicable license terms, then you may not retain, install,
 *   activate or otherwise use the software.
 ==================================================================================================*/
-
 /**
-*   @file    Tspc_Port_Ip_PBcfg.c
+*   @file Emios_Mcl_Ip_PBcfg.c
 *
-*   @addtogroup Port_CFG
+*   @version 5.0.0
+*
+*   @brief   AUTOSAR Mcl - MCL driver source file.
+*   @details 
+*
+*   @addtogroup MCL_DRIVER MCL Driver
 *   @{
 */
 
 #ifdef __cplusplus
-extern "C"{
+extern "C"
+{
 #endif
 
 /*==================================================================================================
-*                                          INCLUDE FILES
+*                                        INCLUDE FILES
 * 1) system and project includes
 * 2) needed interfaces from external units
 * 3) internal and external interfaces from this unit
 ==================================================================================================*/
-#include "Tspc_Port_Ip.h"
-
-
+#include "Emios_Mcl_Ip_Cfg.h"
 
 /*==================================================================================================
-*                                 SOURCE FILE VERSION INFORMATION
+*                               SOURCE FILE VERSION INFORMATION
 ==================================================================================================*/
-#define TSPC_PORT_IP_VENDOR_ID_PBCFG_C                       43
-#define TSPC_PORT_IP_AR_RELEASE_MAJOR_VERSION_PBCFG_C        4
-#define TSPC_PORT_IP_AR_RELEASE_MINOR_VERSION_PBCFG_C        7
-#define TSPC_PORT_IP_AR_RELEASE_REVISION_VERSION_PBCFG_C     0
-#define TSPC_PORT_IP_SW_MAJOR_VERSION_PBCFG_C                5
-#define TSPC_PORT_IP_SW_MINOR_VERSION_PBCFG_C                0
-#define TSPC_PORT_IP_SW_PATCH_VERSION_PBCFG_C                0
-
+#define EMIOS_MCL_IP_PBCFG_VENDOR_ID_C                        43
+#define EMIOS_MCL_IP_PBCFG_AR_RELEASE_MAJOR_VERSION_C         4
+#define EMIOS_MCL_IP_PBCFG_AR_RELEASE_MINOR_VERSION_C         7
+#define EMIOS_MCL_IP_PBCFG_AR_RELEASE_REVISION_VERSION_C      0
+#define EMIOS_MCL_IP_PBCFG_SW_MAJOR_VERSION_C                 5
+#define EMIOS_MCL_IP_PBCFG_SW_MINOR_VERSION_C                 0
+#define EMIOS_MCL_IP_PBCFG_SW_PATCH_VERSION_C                 0
 /*==================================================================================================
-*                                       FILE VERSION CHECKS
+*                                      FILE VERSION CHECKS
 ==================================================================================================*/
-/* Check if Tspc_Port_Ip_PBcfg.c and Tspc_Port_Ip.h are of the same vendor */
-#if (TSPC_PORT_IP_VENDOR_ID_PBCFG_C != TSPC_PORT_IP_VENDOR_ID_H)
-    #error "Tspc_Port_Ip_PBcfg.c and Tspc_Port_Ip.h have different vendor ids"
+/* Check if Emios_Mcl_Ip_PBcfg.c file and Emios_Mcl_Ip_Cfg.h file are of the same vendor */
+#if (EMIOS_MCL_IP_PBCFG_VENDOR_ID_C != EMIOS_MCL_IP_CFG_VENDOR_ID)
+    #error "Emios_Mcl_Ip_PBcfg.c and Emios_Mcl_Ip_Cfg.h have different vendor ids"
 #endif
-/* Check if Tspc_Port_Ip_PBcfg.c and Tspc_Port_Ip.h are of the same Autosar version */
-#if ((TSPC_PORT_IP_AR_RELEASE_MAJOR_VERSION_PBCFG_C    != TSPC_PORT_IP_AR_RELEASE_MAJOR_VERSION_H) || \
-     (TSPC_PORT_IP_AR_RELEASE_MINOR_VERSION_PBCFG_C    != TSPC_PORT_IP_AR_RELEASE_MINOR_VERSION_H) || \
-     (TSPC_PORT_IP_AR_RELEASE_REVISION_VERSION_PBCFG_C != TSPC_PORT_IP_AR_RELEASE_REVISION_VERSION_H) \
+
+/* Check if Emios_Mcl_Ip_PBcfg.c file and Emios_Mcl_Ip_Cfg.h file are of the same Autosar version */
+#if ((EMIOS_MCL_IP_PBCFG_AR_RELEASE_MAJOR_VERSION_C != EMIOS_MCL_IP_CFG_AR_RELEASE_MAJOR_VERSION) || \
+     (EMIOS_MCL_IP_PBCFG_AR_RELEASE_MINOR_VERSION_C != EMIOS_MCL_IP_CFG_AR_RELEASE_MINOR_VERSION) || \
+     (EMIOS_MCL_IP_PBCFG_AR_RELEASE_REVISION_VERSION_C != EMIOS_MCL_IP_CFG_AR_RELEASE_REVISION_VERSION) \
     )
-    #error "AutoSar Version Numbers of Tspc_Port_Ip_PBcfg.c and Tspc_Port_Ip.h are different"
+    #error "AutoSar Version Numbers of Emios_Mcl_Ip_PBcfg.c and Emios_Mcl_Ip_Cfg.h are different"
 #endif
-/* Check if Tspc_Port_Ip_PBcfg.c and Tspc_Port_Ip.h are of the same software version */
-#if ((TSPC_PORT_IP_SW_MAJOR_VERSION_PBCFG_C != TSPC_PORT_IP_SW_MAJOR_VERSION_H) || \
-     (TSPC_PORT_IP_SW_MINOR_VERSION_PBCFG_C != TSPC_PORT_IP_SW_MINOR_VERSION_H) || \
-     (TSPC_PORT_IP_SW_PATCH_VERSION_PBCFG_C != TSPC_PORT_IP_SW_PATCH_VERSION_H)    \
+
+/* Check if Emios_Mcl_Ip_PBcfg.c file and Emios_Mcl_Ip_Cfg.h file are of the same Software version */
+#if ((EMIOS_MCL_IP_PBCFG_SW_MAJOR_VERSION_C != EMIOS_MCL_IP_CFG_SW_MAJOR_VERSION) || \
+     (EMIOS_MCL_IP_PBCFG_SW_MINOR_VERSION_C != EMIOS_MCL_IP_CFG_SW_MINOR_VERSION) || \
+     (EMIOS_MCL_IP_PBCFG_SW_PATCH_VERSION_C != EMIOS_MCL_IP_CFG_SW_PATCH_VERSION) \
     )
-    #error "Software Version Numbers of Tspc_Port_Ip_PBcfg.c and Tspc_Port_Ip.h are different"
+    #error "Software Version Numbers of Emios_Mcl_Ip_PBcfg.c and Emios_Mcl_Ip_Cfg.h are different"
 #endif
 
 /*==================================================================================================
@@ -90,6 +95,7 @@ extern "C"{
 /*==================================================================================================
 *                                         LOCAL VARIABLES
 ==================================================================================================*/
+
 /*==================================================================================================
 *                                        GLOBAL CONSTANTS
 ==================================================================================================*/
@@ -97,39 +103,12 @@ extern "C"{
 /*==================================================================================================
 *                                        GLOBAL VARIABLES
 ==================================================================================================*/
+#define MCL_START_SEC_CONFIG_DATA_UNSPECIFIED
+#include "Mcl_MemMap.h"
 
-#define PORT_START_SEC_CONFIG_DATA_UNSPECIFIED
-#include "Port_MemMap.h"
 
-const Tspc_Port_Ip_ObeGroupConfig aTspc_InitConfigArr[NUM_OF_OBE_GROUP_CONFIG] =
-{
-    {
-        .obeGroupSelect = 0,
-        .obeGroupIndex  = 65535
-    },
-    {
-        .obeGroupSelect = 0,
-        .obeGroupIndex  = 65535
-    },
-    {
-        .obeGroupSelect = 0,
-        .obeGroupIndex  = 65535
-    },
-    {
-        .obeGroupSelect = 0,
-        .obeGroupIndex  = 65535
-    }
-};
-
-#define PORT_STOP_SEC_CONFIG_DATA_UNSPECIFIED
-#include "Port_MemMap.h"
-/*==================================================================================================
-*                                        GLOBAL CONSTANTS
-==================================================================================================*/
-
-/*==================================================================================================
-*                                        GLOBAL VARIABLES
-==================================================================================================*/
+#define MCL_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+#include "Mcl_MemMap.h"
 
 /*==================================================================================================
 *                                    LOCAL FUNCTION PROTOTYPES
@@ -147,4 +126,3 @@ const Tspc_Port_Ip_ObeGroupConfig aTspc_InitConfigArr[NUM_OF_OBE_GROUP_CONFIG] =
 }
 #endif
 
-/** @} */

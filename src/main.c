@@ -33,6 +33,9 @@
 #include "Dio_Cfg.h"
 #include "Dio.h"
 #include "CDD_Uart.h"
+#include "Platform.h"
+
+#include "log.h"
 
 #include <stdio.h>
 
@@ -71,46 +74,18 @@ void TestDelay(uint32 delay)
     DelayTimer=0;
 }
 
-#define UART0_CHANNL 0
-#define uart0_buff_size	256
-uint8_t uart0_buff[uart0_buff_size] = {0};
+uint8_t start_print[16] = "app_init_ok\n";
 
-void bsp_uart_init(void)
+void user_init(void)
 {
-	Uart_AsyncReceive(UART0_CHANNL, uart0_buff, uart0_buff_size);
-	IP_LPUART_0->CTRL &= ~(0xf<<24);
-	IP_LPUART_0->CTRL |= LPUART_CTRL_IDLECFG(7);
-	IP_LPUART_0->CTRL |= LPUART_CTRL_ILT(1);;
-	IP_LPUART_0->CTRL |= LPUART_CTRL_ILIE(1);;
+	/* open the uart0 interrupt. */
+    IntCtrl_Ip_EnableIrq(LPUART0_IRQn);
 
+    log_print_init();
+
+    Uart_AsyncSend(0, start_print, sizeof(start_print));
 }
 
-#define LPUART0_BASE (0x40154000u)
-#define LPUART0_TDR  (*(volatile uint8_t *)(LPUART0_BASE + 0x1Cu)) // DATA¼Ä´æÆ÷
-#define LPUART0_SR   (*(volatile uint32_t *)(LPUART0_BASE + 0x10u)) // STAT¼Ä´æÆ÷
-#define LPUART0_SR_TDRE_MASK (1u << 23) // TX¿Õ±êÖ¾
-
-// SCG register base
-#define SCG_BASE        0x40064000UL
-#define SCG_SOSCCSR     (*(volatile uint32_t*)(SCG_BASE + 0x100))
-#define SCG_SPLLCSR     (*(volatile uint32_t*)(SCG_BASE + 0x200))
-
-// PCC register base (Peripheral Clock Control)
-#define PCC_BASE        0x40065000UL
-#define PCC_LPUART0     (*(volatile uint32_t*)(PCC_BASE + 0xA0))
-
-void EnableLpuart0Clock_Manually(void) {
-    PCC_LPUART0 = 0xC0000000UL;  // Clock enabled, source = FIRC (3)
-}
-
-void TestUart0SendChar(char c) {
-    while ((LPUART0_SR & LPUART0_SR_TDRE_MASK) == 0);  // µÈ´ýTX¿Õ
-    LPUART0_TDR = c;
-}
-
-
-uint8_t uaer_tx_buff[32] = {0};
-uint8_t uaer_tx_buff1[16] = "123456789";
 int main(void) {
     /* Initialize the Mcu driver */
 #if (MCU_PRECOMPILE_SUPPORT == STD_ON)
@@ -130,19 +105,23 @@ int main(void) {
     /* Initialize all pins using the Port driver */
     Port_Init(&Port_Config);
 
+    /* Initialize IRQs */
+    Platform_Init(Platform_Config[0]);
+
     /* Initializes an UART driver*/
     Uart_Init(&Uart_xConfig);
 
-    Uart_SyncSend(0, uaer_tx_buff, 32, 100*1000);
+    user_init();
 
     while (1)
     {
-        Dio_WriteChannel(DioConf_DioChannel_DioChannel_LED3_GREEN_PB14, STD_HIGH);
-        TestDelay(500000);
-        Dio_WriteChannel(DioConf_DioChannel_DioChannel_LED3_GREEN_PB14, STD_LOW);
-        TestDelay(500000);
+    	log_print_task(0);
 
-        Uart_SyncSend(0, uaer_tx_buff1, 10, 100*1000);
+        Dio_WriteChannel(DioConf_DioChannel_DioChannel_LED3_GREEN_PB14, STD_HIGH);
+        TestDelay(1000000);
+        Dio_WriteChannel(DioConf_DioChannel_DioChannel_LED3_GREEN_PB14, STD_LOW);
+        TestDelay(1000000);
+
     }
 
     return (0U);

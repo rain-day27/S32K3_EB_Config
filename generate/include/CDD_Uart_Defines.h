@@ -105,7 +105,7 @@ extern "C"{
 #define UART_HW_CHANNELS_MAPPING_FOR_INIT       {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1}
 
 /* @brief Declare callback parameters if any */
-#define UART_CALLBACK_DECLARED            (STD_OFF)
+#define UART_CALLBACK_DECLARED            (STD_ON)
 
 /* @brief Number of max partitions configured. */
 

@@ -117,6 +117,20 @@ extern Flexio_Uart_Ip_StateStructureType Flexio_Uart_Ip_apStateStructure[FLEXIO_
 *                                    FUNCTION PROTOTYPES
 ==================================================================================================*/
 
+
+/**
+* @brief    Declare callback function if it is used by user
+*/
+
+#define UART_START_SEC_CODE
+#include "Uart_MemMap.h"
+
+/* Define User callback function */
+extern void Uart_Ipw_FlexioTransferCallback(const uint8 HwChannel, const Flexio_Uart_Ip_EventType Event, const void* UserData);
+
+#define UART_STOP_SEC_CODE
+#include "Uart_MemMap.h"
+
 #ifdef __cplusplus
 }
 #endif

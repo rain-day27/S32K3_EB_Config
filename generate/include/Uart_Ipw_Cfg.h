@@ -116,6 +116,21 @@ extern "C"{
 ==================================================================================================*/
 
 
+/**
+* @brief    Declare callback functions if any
+*/
+
+#define UART_START_SEC_CODE
+#include "Uart_MemMap.h"
+
+/* Define User Receive callback function */
+extern void uart0_event_cbk(uint8 HwInstance, Uart_EventType Event);
+
+#define UART_STOP_SEC_CODE
+#include "Uart_MemMap.h"
+
+            
+
 #ifdef __cplusplus
 }
 #endif

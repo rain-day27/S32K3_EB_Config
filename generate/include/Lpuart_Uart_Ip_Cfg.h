@@ -119,6 +119,20 @@ extern Lpuart_Uart_Ip_StateStructureType Lpuart_Uart_Ip_apStateStructure[LPUART_
 #define UART_STOP_SEC_VAR_CLEARED_UNSPECIFIED_NO_CACHEABLE
 #include "Uart_MemMap.h"
 
+/**
+* @brief    Declare callback function if it is used by user
+*/
+
+#define UART_START_SEC_CODE
+#include "Uart_MemMap.h"
+
+/* Define User callback function */
+extern void Uart_Ipw_LpuartCallback(const uint8 HwInstance, const Lpuart_Uart_Ip_EventType Event, const void* UserData);
+
+#define UART_STOP_SEC_CODE
+#include "Uart_MemMap.h"
+
+
 #ifdef __cplusplus
 }
 #endif

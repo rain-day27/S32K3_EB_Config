@@ -215,7 +215,7 @@ VTABLE:
 .long undefined_handler
 .long undefined_handler
 .long undefined_handler /*140*/
-.long Uart0_handler
+.long undefined_handler
 .long undefined_handler
 .long undefined_handler
 .long undefined_handler

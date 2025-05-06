@@ -79,7 +79,7 @@ uint8_t start_print[16] = "app_init_ok\n";
 void user_init(void)
 {
 	/* open the uart0 interrupt. */
-    IntCtrl_Ip_EnableIrq(LPUART0_IRQn);
+    //IntCtrl_Ip_EnableIrq(LPUART0_IRQn);
 
     log_print_init();
 
@@ -106,7 +106,7 @@ int main(void) {
     Port_Init(&Port_Config);
 
     /* Initialize IRQs */
-    Platform_Init(Platform_Config[0]);
+    Platform_Init(NULL);
 
     /* Initializes an UART driver*/
     Uart_Init(&Uart_xConfig);
@@ -121,7 +121,6 @@ int main(void) {
         TestDelay(1000000);
         Dio_WriteChannel(DioConf_DioChannel_DioChannel_LED3_GREEN_PB14, STD_LOW);
         TestDelay(1000000);
-
     }
 
     return (0U);

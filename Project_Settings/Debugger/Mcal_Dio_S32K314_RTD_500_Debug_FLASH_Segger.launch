@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="ilg.gnuarmeclipse.debug.gdbjtag.jlink.launchConfigurationType">
+    <booleanAttribute key="com.nxp.s32ds.ext.cdt.debug.svd.ask_before_clean" value="false"/>
+    <booleanAttribute key="com.nxp.s32ds.ext.cdt.debug.svd.clean_watch_view" value="false"/>
+    <stringAttribute key="com.nxp.s32ds.ext.cdt.debug.svd.merge_strategy" value="ALL"/>
+    <stringAttribute key="com.nxp.s32ds.ext.cdt.debug.svd.svd_path" value=""/>
+    <booleanAttribute key="com.nxp.s32ds.ext.cdt.debug.svd.use_default" value="true"/>
     <booleanAttribute key="ilg.gnuarmeclipse.debug.gdbjtag.jlink.doConnectToRunning" value="false"/>
     <booleanAttribute key="ilg.gnuarmeclipse.debug.gdbjtag.jlink.doContinue" value="true"/>
     <booleanAttribute key="ilg.gnuarmeclipse.debug.gdbjtag.jlink.doDebugInRam" value="true"/>
@@ -70,7 +75,7 @@
     <stringAttribute key="org.eclipse.cdt.launch.PROGRAM_NAME" value="Debug_FLASH/Mcal_Dio_S32K314_RTD_500.elf"/>
     <stringAttribute key="org.eclipse.cdt.launch.PROJECT_ATTR" value="Mcal_Dio_S32K314_RTD_500"/>
     <booleanAttribute key="org.eclipse.cdt.launch.PROJECT_BUILD_CONFIG_AUTO_ATTR" value="false"/>
-    <stringAttribute key="org.eclipse.cdt.launch.PROJECT_BUILD_CONFIG_ID_ATTR" value="com.nxp.s32ds.cle.arm.mbs.arm32.bare.gnu.10.2.exe.debug.460166384"/>
+    <stringAttribute key="org.eclipse.cdt.launch.PROJECT_BUILD_CONFIG_ID_ATTR" value=""/>
     <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
         <listEntry value="/Mcal_Dio_S32K314_RTD_500"/>
     </listAttribute>

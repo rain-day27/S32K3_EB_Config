@@ -81,7 +81,8 @@ extern const IntCtrl_Ip_CtrlConfigType intCtrlConfig;
 /* Declaration of interrupt handlers 
  * NOTE: For application specific handlers, these functions must be implemented in the application code!
  */
-extern void Uart0_handler(void);
+extern void Uart0_Irq_handler(void);
+extern void Pit0_Irq_handler(void);
 
 #ifdef  PLATFORM_IP_ENABLE_INT_CTRL
 #if  (PLATFORM_IP_ENABLE_INT_CTRL == STD_ON)

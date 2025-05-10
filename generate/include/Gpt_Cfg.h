@@ -199,20 +199,19 @@ extern "C"{
 * @brief    GPT_PRECOMPILE_SUPPORT Switch
 * @details  Enable/disable GPT_PRECOMPILE_SUPPORT.
 */
-#define GPT_PRECOMPILE_SUPPORT (STD_OFF)
+#define GPT_PRECOMPILE_SUPPORT (STD_ON)
 /*================================================================================================*/
 /**
 * @brief        Define symbolic names of channels
 * @details      Symbolic names of channels.
 */
 #define GptConf_GptChannelConfiguration_GptChannelConfiguration_PIT0_CH0 (0U)
-#define GptConf_GptChannelConfiguration_GptChannelConfiguration_PIT0_CH1 (1U)
 /*================================================================================================*/
 /**
 * @brief       GPT_HW_CHANNEL_NUM
 * @details     The maximum number of HW channels. This is used to allocate memory space for channel runtime info.
 */
-#define GPT_HW_CHANNEL_NUM (2U)
+#define GPT_HW_CHANNEL_NUM (1U)
 /*================================================================================================*/
 /**
 * @brief        GPT_MAX_PARTITIONS_CFG.
@@ -230,7 +229,7 @@ extern "C"{
 * @brief        GPT_NUM_CONFIG.
 * @details      Number of ChannelConfiguration
 */
-#define GPT_NUM_CONFIG (2U)
+#define GPT_NUM_CONFIG (1U)
 /*================================================================================================*/
 /**
 *   @brief      GPT_HW_PREDEFTIMER_NUM
@@ -261,8 +260,6 @@ typedef enum
 /*==================================================================================================
 *                                GLOBAL VARIABLE DECLARATIONS
 ==================================================================================================*/
-#define GPT_CONFIG_EXT \
-       GPT_CONFIG_PB
 /*==================================================================================================
 *                                    FUNCTION PROTOTYPES
 ==================================================================================================*/

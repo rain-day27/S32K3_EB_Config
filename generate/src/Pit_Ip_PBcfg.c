@@ -112,10 +112,10 @@ const Pit_Ip_InstanceConfigType PIT_0_InitConfig_PB =
     (boolean)(FALSE), /* Enable/Disable real time interrupt timer */
 #endif
     /** @brief PIT Debug Mode */
-    (boolean)(FALSE) /* Enable/Disable Freeze Bit */
+    (boolean)(TRUE) /* Enable/Disable Freeze Bit */
 };
 
-const Pit_Ip_ChannelConfigType PIT_0_ChannelConfig_PB[2U] = 
+const Pit_Ip_ChannelConfigType PIT_0_ChannelConfig_PB[1U] = 
 {
     /** @brief GptPitChannels_0 */
     {
@@ -129,20 +129,6 @@ const Pit_Ip_ChannelConfigType PIT_0_ChannelConfig_PB[2U] =
         (uint8)0U,
         /** @brief PIT channel mode */
         PIT_IP_CH_MODE_CONTINUOUS
-    }
-    ,
-    /** @brief GptPitChannels_1 */
-    {
-        /** @brief PIT Channel Id */
-        1U,
-        /** @brief PIT Enable Interrupt */
-        (boolean)(FALSE),
-        /** @brief PIT callback name */
-        &Gpt_ProcessCommonInterrupt,
-        /** @brief PIT callbackparam */
-        (uint8)1U,
-        /** @brief PIT channel mode */
-        PIT_IP_CH_MODE_ONESHOT
     }
 };
 

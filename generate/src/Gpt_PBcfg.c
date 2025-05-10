@@ -114,7 +114,7 @@ extern "C"{
 *
 * @brief The callback functions defined by the user to be called as channel notifications
 */
-extern void GptNotification_Pit0_Ch0(void);
+extern void Gpt_Pit0_Ch0_cnk(void);
 
 /*==================================================================================================
 *                                       GLOBAL CONSTANTS
@@ -128,7 +128,7 @@ extern void GptNotification_Pit0_Ch0(void);
  /*Gpt_Ipw_PluginMacros.m*/
 /** @} */
 /* Number of channels per variant without partitions */
-#define GPT_CONF_CHANNELS_PB    2U
+#define GPT_CONF_CHANNELS_PB    1U
 #define GPT_STOP_SEC_CONFIG_DATA_UNSPECIFIED
 #include "Gpt_MemMap.h"
 
@@ -151,8 +151,7 @@ static const Gpt_HwPredefChannelConfigType *const Gpt_pInitPredefTimerChannelPB[
 */
 static const uint8 u8GptChannelIdToIndexMap[GPT_NUM_CONFIG] =
 {
-    0, /* Logical Channel GptChannelConfiguration_PIT0_CH0*/
-    1  /* Logical Channel GptChannelConfiguration_PIT0_CH1*/
+    0  /* Logical Channel GptChannelConfiguration_PIT0_CH0*/
 };
 
 #define GPT_STOP_SEC_CONST_UNSPECIFIED
@@ -164,7 +163,7 @@ static const Gpt_ChannelConfigType Gpt_InitChannelPB[GPT_CONF_CHANNELS_PB] =
 {
     {   /*GptChannelConfiguration_PIT0_CH0 configuration data*/
         (boolean)FALSE, /* Wakeup capability */
-        &GptNotification_Pit0_Ch0, /* Channel notification */
+        &Gpt_Pit0_Ch0_cnk, /* Channel notification */
 #if ((GPT_WAKEUP_FUNCTIONALITY_API == STD_ON) && (GPT_REPORT_WAKEUP_SOURCE == STD_ON))
         (EcuM_WakeupSourceType)0U, /* Wakeup information */
 #endif
@@ -172,23 +171,13 @@ static const Gpt_ChannelConfigType Gpt_InitChannelPB[GPT_CONF_CHANNELS_PB] =
         (GPT_CH_MODE_CONTINUOUS), /* Timer mode:continous/one-shot */
         &Gpt_Ipw_ChannelConfig_PB[0U]
     }
-,
-    {   /*GptChannelConfiguration_PIT0_CH1 configuration data*/
-        (boolean)FALSE, /* Wakeup capability */
-        NULL_PTR, /* Channel notification */
-#if ((GPT_WAKEUP_FUNCTIONALITY_API == STD_ON) && (GPT_REPORT_WAKEUP_SOURCE == STD_ON))
-        (EcuM_WakeupSourceType)0U, /* Wakeup information */
-#endif
-        (Gpt_ValueType)(4294967295U), /* Maximum ticks value*/
-        (GPT_CH_MODE_ONESHOT), /* Timer mode:continous/one-shot */
-        &Gpt_Ipw_ChannelConfig_PB[1U]
-    }
 };
 
     
 
+/* VariantPreCompile/LinkTime and at most 1 configured variant */
 /**
-* @brief        Gpt configuration type.
+* @brief        Gpt configuration type does not existing GptEcucPartitionRef
 * @details      This is the type of the data structure including the configuration
 *               set required for initializing the GPT driver.
 *
@@ -196,7 +185,7 @@ static const Gpt_ChannelConfigType Gpt_InitChannelPB[GPT_CONF_CHANNELS_PB] =
 const Gpt_ConfigType Gpt_Config =
 {
     /** @brief Number of GPT channels (configured in tresos plugin builder)*/
-    (Gpt_ChannelType)2U,
+    (Gpt_ChannelType)1U,
     /** @brief Pointer to the GPT channel configuration */
     &Gpt_InitChannelPB,
     /** @brief Number of GPT instances (configured in tresos plugin builder)*/

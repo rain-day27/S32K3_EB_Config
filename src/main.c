@@ -32,6 +32,7 @@
 #include "Port.h"
 #include "Dio_Cfg.h"
 #include "Dio.h"
+#include "Gpt.h"
 #include "CDD_Uart.h"
 #include "Platform.h"
 
@@ -39,29 +40,6 @@
 
 #include <stdio.h>
 
-#if defined (__ghs__)
-    #define __INTERRUPT_SVC  __interrupt
-    #define __ASM_VOLATILE __asm volatile
-    #define __NO_RETURN__ _Pragma("ghs nowarning 111")
-#elif defined (__ICCARM__)
-    #define __INTERRUPT_SVC  __svc
-    #define __ASM_VOLATILE asm volatile
-    #define __NO_RETURN__ _Pragma("diag_suppress=Pe111")
-#elif defined ( __DCC__ )
-  #define __INTERRUPT_SVC __attribute__ ((interrupt ("SWI")))
-  #define __ASM_VOLATILE __asm volatile
-  #define __NO_RETURN__
-#elif defined (__GNUC__)
-    #define __INTERRUPT_SVC  __attribute__ ((interrupt ("SVC")))
-    #define __ASM_VOLATILE __asm volatile
-    #define __NO_RETURN__
-#else
-    #define __INTERRUPT_SVC
-    #define __NO_RETURN__
-    #define __ASM_VOLATILE __asm volatile
-#endif
-
-int counter, accumulator = 0, limit_value = 1000000;
 
 void TestDelay(uint32 delay);
 void TestDelay(uint32 delay)
@@ -83,16 +61,18 @@ void user_init(void)
 
     log_print_init();
 
+    /* Start the Gpt timer */
+    Gpt_StartTimer(GptConf_GptChannelConfiguration_GptChannelConfiguration_PIT0_CH0, 120000000);
+
+    /* Enable the Gpt notification to get the event for toggling the LED periodically */
+    Gpt_EnableNotification(GptConf_GptChannelConfiguration_GptChannelConfiguration_PIT0_CH0);
+
     Uart_AsyncSend(0, start_print, sizeof(start_print));
 }
 
 int main(void) {
     /* Initialize the Mcu driver */
-#if (MCU_PRECOMPILE_SUPPORT == STD_ON)
-    Mcu_Init(NULL_PTR);
-#elif (MCU_PRECOMPILE_SUPPORT == STD_OFF)
     Mcu_Init(&Mcu_Config);
-#endif /* (MCU_PRECOMPILE_SUPPORT == STD_ON) */
 
     /* Initialize the clock tree and apply PLL as system clock */
     Mcu_InitClock(McuClockSettingConfig_0);
@@ -108,11 +88,16 @@ int main(void) {
     /* Initialize IRQs */
     Platform_Init(NULL);
 
+    /* Initialize the high level configuration structure of Gpt driver */
+    Gpt_Init(NULL);
+
     /* Initializes an UART driver*/
     Uart_Init(&Uart_xConfig);
 
     user_init();
 
+    volatile Gpt_ValueType before = 0;
+    volatile Gpt_ValueType future = 0;
     while (1)
     {
     	log_print_task(0);
@@ -121,12 +106,12 @@ int main(void) {
         TestDelay(1000000);
         Dio_WriteChannel(DioConf_DioChannel_DioChannel_LED3_GREEN_PB14, STD_LOW);
         TestDelay(1000000);
+
+        before = Gpt_GetTimeElapsed(GptConf_GptChannelConfiguration_GptChannelConfiguration_PIT0_CH0);
+        future = Gpt_GetTimeRemaining(GptConf_GptChannelConfiguration_GptChannelConfiguration_PIT0_CH0);
+        Uart_AsyncSend(0, start_print, sizeof(start_print));
     }
 
     return (0U);
 }
 
-__INTERRUPT_SVC void SVC_Handler() {
-    accumulator += counter;
-    printf("counter is 0x%08x, accumulator is 0x%08x\n", counter, accumulator);
-}

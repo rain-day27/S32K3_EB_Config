@@ -109,7 +109,7 @@ extern const Gpt_Ipw_HwInstanceConfigType Gpt_Ipw_HwInstanceConfig_PB[1U];
 /** 
  * @brief   Gpt channels IP related configuration array
  */
-extern const Gpt_Ipw_HwChannelConfigType Gpt_Ipw_ChannelConfig_PB[2U];
+extern const Gpt_Ipw_HwChannelConfigType Gpt_Ipw_ChannelConfig_PB[1U];
 
 
 

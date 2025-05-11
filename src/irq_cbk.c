@@ -4,13 +4,20 @@
 #include "Gpt.h"
 #include "Gpt_Irq.h"
 
+/* define. */
 #define USER_TASK_TICK	(1*40*1000)	//1ms=40*1000us*
+
+/* global variable. */
+volatile uint64_t system_count = 0;
+
+/* external declaration. */
+extern void PIT_0_ISR(void);
+
 
 void Uart0_Irq_handler(void)
 {
     Lpuart_Uart_Ip_IrqHandler(0U);
 }
-
 
 void uart0_event_cbk(uint8 Channel, Uart_EventType Event)
 {
@@ -19,20 +26,15 @@ void uart0_event_cbk(uint8 Channel, Uart_EventType Event)
 	return ;
 }
 
-volatile uint64_t system_count = 0;
 void Pit0_Irq_handler(void)
 {
-	system_count++;
-	Gpt_ProcessCommonInterrupt(GptConf_GptChannelConfiguration_GptChannelConfiguration_PIT0_CH0);
+	PIT_0_ISR();
+	//Gpt_ProcessCommonInterrupt(GptConf_GptChannelConfiguration_GptChannelConfiguration_PIT0_CH0);
 }
 
 /* Execute once every 1ms. */
 void Gpt_Pit0_Ch0_cnk(void)
 {
-	Gpt_StopTimer(GptConf_GptChannelConfiguration_GptChannelConfiguration_PIT0_CH0);
-   /* Start the Gpt timer */
-	Gpt_StartTimer(GptConf_GptChannelConfiguration_GptChannelConfiguration_PIT0_CH0, USER_TASK_TICK);
-	/* Enable the Gpt notification to get the event for toggling the LED periodically */
-	Gpt_EnableNotification(GptConf_GptChannelConfiguration_GptChannelConfiguration_PIT0_CH0);
+	system_count++;
 }
 

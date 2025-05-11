@@ -61,43 +61,46 @@ void user_init(void)
 
     log_print_init();
 
-    /* Start the Gpt timer */
-    Gpt_StartTimer(GptConf_GptChannelConfiguration_GptChannelConfiguration_PIT0_CH0, 120000000);
+    /* Start the Gpt timer 1ms */
+    Gpt_StartTimer(GptConf_GptChannelConfiguration_GptChannelConfiguration_PIT0_CH0, 40000);
 
     /* Enable the Gpt notification to get the event for toggling the LED periodically */
     Gpt_EnableNotification(GptConf_GptChannelConfiguration_GptChannelConfiguration_PIT0_CH0);
 
     Uart_AsyncSend(0, start_print, sizeof(start_print));
 }
+void Mcal_Init(void)
+{
+	/* Initialize the Mcu driver */
+	Mcu_Init(&Mcu_Config);
 
-int main(void) {
-    /* Initialize the Mcu driver */
-    Mcu_Init(&Mcu_Config);
+	/* Initialize the clock tree and apply PLL as system clock */
+	Mcu_InitClock(McuClockSettingConfig_0);
+	while(MCU_PLL_LOCKED != Mcu_GetPllStatus())	{}
+	Mcu_DistributePllClock();
 
-    /* Initialize the clock tree and apply PLL as system clock */
-    Mcu_InitClock(McuClockSettingConfig_0);
-    while(MCU_PLL_LOCKED != Mcu_GetPllStatus())	{}
-    Mcu_DistributePllClock();
+	/* Apply a mode configuration */
+	Mcu_SetMode(McuModeSettingConf_0);
 
-    /* Apply a mode configuration */
-    Mcu_SetMode(McuModeSettingConf_0);
+	/* Initialize all pins using the Port driver */
+	Port_Init(&Port_Config);
 
-    /* Initialize all pins using the Port driver */
-    Port_Init(&Port_Config);
+	/* Initialize IRQs */
+	Platform_Init(NULL);
 
-    /* Initialize IRQs */
-    Platform_Init(NULL);
+	/* Initialize the high level configuration structure of Gpt driver */
+	Gpt_Init(NULL);
 
-    /* Initialize the high level configuration structure of Gpt driver */
-    Gpt_Init(NULL);
+	/* Initializes an UART driver*/
+	Uart_Init(&Uart_xConfig);
+}
 
-    /* Initializes an UART driver*/
-    Uart_Init(&Uart_xConfig);
+int main(void)
+{
+	Mcal_Init();
 
     user_init();
 
-    volatile Gpt_ValueType before = 0;
-    volatile Gpt_ValueType future = 0;
     while (1)
     {
     	log_print_task(0);
@@ -107,9 +110,6 @@ int main(void) {
         Dio_WriteChannel(DioConf_DioChannel_DioChannel_LED3_GREEN_PB14, STD_LOW);
         TestDelay(1000000);
 
-        before = Gpt_GetTimeElapsed(GptConf_GptChannelConfiguration_GptChannelConfiguration_PIT0_CH0);
-        future = Gpt_GetTimeRemaining(GptConf_GptChannelConfiguration_GptChannelConfiguration_PIT0_CH0);
-        Uart_AsyncSend(0, start_print, sizeof(start_print));
     }
 
     return (0U);

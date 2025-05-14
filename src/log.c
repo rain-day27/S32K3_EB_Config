@@ -6,6 +6,8 @@
  */
 
 #include "CDD_Uart.h"
+#include "FreeRTOS.h"
+#include "task.h"
 
 #include "fifo.h"
 
@@ -28,6 +30,7 @@ void log_print_init(void)
 	fifo_init(&log_fifo, log_tx_buff, sizeof(log_tx_buff));
 }
 
+#if 0
 void log_print_task(uint8_t param)
 {
 	(void)param;
@@ -38,3 +41,23 @@ void log_print_task(uint8_t param)
 		Uart_AsyncSend(UART0_CHANNL, log2uart_buff, print_count);
 	}
 }
+#else
+void log_print_task(void* param)
+{
+	(void)param;
+	char task_printf[10] = "11223344";
+
+	while(1)
+	{
+		app_debug(task_printf, sizeof(task_printf));
+		uint16_t print_count= fifo_get_count(&log_fifo);
+
+		if(fifo_read(&log_fifo, log2uart_buff, print_count))
+		{
+			Uart_AsyncSend(UART0_CHANNL, log2uart_buff, print_count);
+		}
+
+		vTaskDelay(1000);
+	}
+}
+#endif

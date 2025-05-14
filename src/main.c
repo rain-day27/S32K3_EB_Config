@@ -36,20 +36,24 @@
 #include "CDD_Uart.h"
 #include "Platform.h"
 
+#include "FreeRTOS.h"
+#include "task.h"
+#include "queue.h"
+
 #include "log.h"
+#include "app.h"
 
 #include <stdio.h>
 
 
-void TestDelay(uint32 delay);
-void TestDelay(uint32 delay)
+StaticTask_t xIdleTaskTCB;
+StackType_t uxIdleTaskStack[ configMINIMAL_STACK_SIZE ];
+void vApplicationGetIdleTaskMemory( StaticTask_t **ppxIdleTaskTCBBuffer, StackType_t **ppxIdleTaskStackBuffer, uint32_t *pulIdleTaskStackSize )
 {
-    static volatile uint32 DelayTimer = 0;
-    while(DelayTimer<delay)
-    {
-        DelayTimer++;
-    }
-    DelayTimer=0;
+    // 返回这些缓冲区的地址和大小
+    *ppxIdleTaskTCBBuffer = &xIdleTaskTCB;
+    *ppxIdleTaskStackBuffer = uxIdleTaskStack;
+    *pulIdleTaskStackSize = configMINIMAL_STACK_SIZE;
 }
 
 uint8_t start_print[16] = "app_init_ok\n";
@@ -101,14 +105,13 @@ int main(void)
 
     user_init();
 
+    xTaskCreate((TaskFunction_t)log_print_task, "LOG START", 256, NULL, 1, NULL);
+    xTaskCreate((TaskFunction_t)app_task, "APP START", 256, NULL, 1, NULL);
+
+    vTaskStartScheduler();
+
     while (1)
     {
-    	log_print_task(0);
-
-        Dio_WriteChannel(DioConf_DioChannel_DioChannel_LED3_GREEN_PB14, STD_HIGH);
-        TestDelay(1000000);
-        Dio_WriteChannel(DioConf_DioChannel_DioChannel_LED3_GREEN_PB14, STD_LOW);
-        TestDelay(1000000);
 
     }
 

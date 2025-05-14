@@ -174,10 +174,12 @@ void PendSV_Handler(void)
 {
     while(TRUE){};
 }
+/*
 void SysTick_Handler(void)
 {
-    while(TRUE){};
+	  while(TRUE){};
 }
+*/
 void undefined_handler(void)
 {
    while(TRUE){};

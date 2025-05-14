@@ -4,6 +4,9 @@
 #include "Gpt.h"
 #include "Gpt_Irq.h"
 
+#include "FreeRTOS.h"
+#include "task.h"
+
 /* define. */
 #define USER_TASK_TICK	(1*40*1000)	//1ms=40*1000us*
 

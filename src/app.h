@@ -9,5 +9,6 @@
 #define APP_H_
 
 void app_task(void* param);
+uint64_t get_sys_time(void);
 
 #endif /* APP_H_ */

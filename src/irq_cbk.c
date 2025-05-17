@@ -41,3 +41,8 @@ void Gpt_Pit0_Ch0_cnk(void)
 	system_count++;
 }
 
+uint64_t get_sys_time(void)
+{
+	return system_count;
+}
+

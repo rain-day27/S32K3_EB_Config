@@ -8,8 +8,17 @@
 #ifndef LOG_H_
 #define LOG_H_
 
+#define NEW_LINE	"\r\n"
+
+typedef enum {
+    e_log_debug,
+    e_log_info,
+    e_log_warn,
+    e_log_error,
+} log_level_e;
+
 void log_print_init(void);
 void log_print_task(void* param);
-void app_debug(const char* str, uint16_t len);
+void app_log(log_level_e level, const char* tag, const char* fmt, ...);
 
 #endif /* LOG_H_ */

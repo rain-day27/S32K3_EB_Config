@@ -71,13 +71,14 @@ extern "C" {
     
 /* List of configurations for interrupts */
 static const IntCtrl_Ip_IrqConfigType aIrqConfiguration[] = {
-    {LPUART0_IRQn, (boolean)TRUE, 0U, &Uart0_Irq_handler},
-    {PIT0_IRQn, (boolean)TRUE, 1U, &Pit0_Irq_handler},
+    {LPUART0_IRQn, (boolean)TRUE, 1U, &Uart0_Irq_handler},
+    {PIT0_IRQn, (boolean)TRUE, 15U, &Pit0_Irq_handler},
+    {ADC0_IRQn, (boolean)TRUE, 4U, &Adc0_Irq_handler},
 };
 
 /* Configuration structure for interrupt controller */
 const IntCtrl_Ip_CtrlConfigType intCtrlConfig = {
-    2U,
+    3U,
     
     
     aIrqConfiguration

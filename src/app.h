@@ -8,6 +8,12 @@
 #ifndef APP_H_
 #define APP_H_
 
+typedef enum __adc0_ch_e{
+	e_adc0_ch_p0,	//PIN PTD1
+	e_adc0_ch_S10,	//PIN PTD3
+	e_adc0_ch_max
+}adc0_ch_e;
+
 void app_task(void* param);
 uint64_t get_sys_time(void);
 

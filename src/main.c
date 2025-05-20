@@ -33,6 +33,7 @@
 #include "Dio_Cfg.h"
 #include "Dio.h"
 #include "Gpt.h"
+#include "Adc.h"
 #include "CDD_Uart.h"
 #include "Platform.h"
 
@@ -44,6 +45,7 @@
 #include "app.h"
 
 #include <stdio.h>
+#include <string.h>
 
 
 StaticTask_t xIdleTaskTCB;
@@ -66,12 +68,12 @@ void user_init(void)
     log_print_init();
 
     /* Start the Gpt timer 1ms */
-    Gpt_StartTimer(GptConf_GptChannelConfiguration_GptChannelConfiguration_PIT0_CH0, 40000);
+    Gpt_StartTimer(GptConf_GptChannelConfiguration_GptChannelConfiguration_Pit0_Ch0, 40000);
 
     /* Enable the Gpt notification to get the event for toggling the LED periodically */
-    Gpt_EnableNotification(GptConf_GptChannelConfiguration_GptChannelConfiguration_PIT0_CH0);
+    Gpt_EnableNotification(GptConf_GptChannelConfiguration_GptChannelConfiguration_Pit0_Ch0);
 
-    Uart_AsyncSend(0, start_print, sizeof(start_print));
+    Uart_AsyncSend(0, start_print, strlen((char*)start_print));
 }
 void Mcal_Init(void)
 {
@@ -89,11 +91,14 @@ void Mcal_Init(void)
 	/* Initialize all pins using the Port driver */
 	Port_Init(&Port_Config);
 
+	/* Adc Initialize */
+	Adc_Init(NULL_PTR);
+
 	/* Initialize IRQs */
-	Platform_Init(NULL);
+	Platform_Init(NULL_PTR);
 
 	/* Initialize the high level configuration structure of Gpt driver */
-	Gpt_Init(NULL);
+	Gpt_Init(NULL_PTR);
 
 	/* Initializes an UART driver*/
 	Uart_Init(&Uart_xConfig);

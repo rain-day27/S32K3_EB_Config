@@ -112,7 +112,7 @@ const Pit_Ip_InstanceConfigType PIT_0_InitConfig_PB =
     (boolean)(FALSE), /* Enable/Disable real time interrupt timer */
 #endif
     /** @brief PIT Debug Mode */
-    (boolean)(TRUE) /* Enable/Disable Freeze Bit */
+    (boolean)(FALSE) /* Enable/Disable Freeze Bit */
 };
 
 const Pit_Ip_ChannelConfigType PIT_0_ChannelConfig_PB[1U] = 

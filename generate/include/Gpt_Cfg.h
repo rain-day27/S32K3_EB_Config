@@ -205,7 +205,7 @@ extern "C"{
 * @brief        Define symbolic names of channels
 * @details      Symbolic names of channels.
 */
-#define GptConf_GptChannelConfiguration_GptChannelConfiguration_PIT0_CH0 (0U)
+#define GptConf_GptChannelConfiguration_GptChannelConfiguration_Pit0_Ch0 (0U)
 /*================================================================================================*/
 /**
 * @brief       GPT_HW_CHANNEL_NUM

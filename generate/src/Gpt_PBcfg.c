@@ -114,7 +114,7 @@ extern "C"{
 *
 * @brief The callback functions defined by the user to be called as channel notifications
 */
-extern void Gpt_Pit0_Ch0_cnk(void);
+extern void Gpt_Pit0_Ch0_cbk(void);
 
 /*==================================================================================================
 *                                       GLOBAL CONSTANTS
@@ -151,7 +151,7 @@ static const Gpt_HwPredefChannelConfigType *const Gpt_pInitPredefTimerChannelPB[
 */
 static const uint8 u8GptChannelIdToIndexMap[GPT_NUM_CONFIG] =
 {
-    0  /* Logical Channel GptChannelConfiguration_PIT0_CH0*/
+    0  /* Logical Channel GptChannelConfiguration_Pit0_Ch0*/
 };
 
 #define GPT_STOP_SEC_CONST_UNSPECIFIED
@@ -161,9 +161,9 @@ static const uint8 u8GptChannelIdToIndexMap[GPT_NUM_CONFIG] =
 #include "Gpt_MemMap.h"
 static const Gpt_ChannelConfigType Gpt_InitChannelPB[GPT_CONF_CHANNELS_PB] =
 {
-    {   /*GptChannelConfiguration_PIT0_CH0 configuration data*/
+    {   /*GptChannelConfiguration_Pit0_Ch0 configuration data*/
         (boolean)FALSE, /* Wakeup capability */
-        &Gpt_Pit0_Ch0_cnk, /* Channel notification */
+        &Gpt_Pit0_Ch0_cbk, /* Channel notification */
 #if ((GPT_WAKEUP_FUNCTIONALITY_API == STD_ON) && (GPT_REPORT_WAKEUP_SOURCE == STD_ON))
         (EcuM_WakeupSourceType)0U, /* Wakeup information */
 #endif

@@ -2,6 +2,7 @@
 #include "irq_cbk.h"
 #include "Lpuart_Uart_Ip.h"
 #include "Gpt.h"
+#include "Adc.h"
 #include "Gpt_Irq.h"
 
 #include "FreeRTOS.h"
@@ -15,6 +16,7 @@ volatile uint64_t system_count = 0;
 
 /* external declaration. */
 extern void PIT_0_ISR(void);
+extern void Adc_Sar_0_Isr(void);
 
 
 void Uart0_Irq_handler(void)
@@ -32,11 +34,11 @@ void uart0_event_cbk(uint8 Channel, Uart_EventType Event)
 void Pit0_Irq_handler(void)
 {
 	PIT_0_ISR();
-	//Gpt_ProcessCommonInterrupt(GptConf_GptChannelConfiguration_GptChannelConfiguration_PIT0_CH0);
+	//Gpt_ProcessCommonInterrupt(GptConf_GptChannelConfiguration_GptChannelConfiguration_Pit0_Ch0);
 }
 
 /* Execute once every 1ms. */
-void Gpt_Pit0_Ch0_cnk(void)
+void Gpt_Pit0_Ch0_cbk(void)
 {
 	system_count++;
 }
@@ -44,5 +46,10 @@ void Gpt_Pit0_Ch0_cnk(void)
 uint64_t get_sys_time(void)
 {
 	return system_count;
+}
+
+void Adc0_Irq_handler(void)
+{
+	Adc_Sar_0_Isr();
 }
 

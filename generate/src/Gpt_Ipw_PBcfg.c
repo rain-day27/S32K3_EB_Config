@@ -204,7 +204,7 @@ const Gpt_Ipw_HwInstanceConfigType Gpt_Ipw_HwInstanceConfig_PB[1U]=
  */
 const Gpt_Ipw_HwChannelConfigType Gpt_Ipw_ChannelConfig_PB[1U] =
 {
-    /** @brief GptChannelConfiguration_PIT0_CH0 */
+    /** @brief GptChannelConfiguration_Pit0_Ch0 */
     {
         /** @brief IP type  */
         GPT_PIT_MODULE,

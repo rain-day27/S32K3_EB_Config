@@ -3,4 +3,5 @@
 *.o
 *,d
 *.su
+*.epc
 /Debug_FLASH/

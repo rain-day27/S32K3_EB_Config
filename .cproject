@@ -99,6 +99,7 @@
 									<listOptionValue builtIn="false" value="S32K314"/>
 									<listOptionValue builtIn="false" value="GCC"/>
 									<listOptionValue builtIn="false" value="USE_SW_VECTOR_MODE"/>
+									<listOptionValue builtIn="false" value="ZZ_MODIFY"/>
 								</option>
 								<option id="com.nxp.s32ds.cle.arm.mbs.arm32.bare.gnu.9.2.tool.c.compiler.option.dialect.std.1242134783" name="Language standard" superClass="com.nxp.s32ds.cle.arm.mbs.arm32.bare.gnu.9.2.tool.c.compiler.option.dialect.std" useByScannerDiscovery="true" value="com.nxp.s32ds.cle.arm.mbs.arm32.bare.gnu.9.2.tool.c.compiler.option.dialect.std.c99" valueType="enumerated"/>
 								<option id="com.freescale.s32ds.cross.gnu.tool.c.compiler.option.optimization.nocommon.1656761253" name="No common uninitialized (-fno-common)" superClass="com.freescale.s32ds.cross.gnu.tool.c.compiler.option.optimization.nocommon" useByScannerDiscovery="true" value="true" valueType="boolean"/>
@@ -183,7 +184,7 @@
 					<sourceEntries>
 						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="EB_project"/>
 						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="FreeRTOS"/>
-						<entry excluding="Pwm_TS_T40D34M50I0R0|Zipwire_TS_T40D34M50I0R0|WdgIf_TS_T40D34M50I0R0|Wdg_TS_T40D34M50I0R0|Spi_TS_T40D34M50I0R0|Sent_TS_T40D34M50I0R0|Rm_TS_T40D34M50I0R0|Ocu_TS_T40D34M50I0R0|Ocotp_TS_T40D34M50I0R0|MemIf_TS_T40D34M50I0R0|MemAcc_TS_T40D34M50I0R0|Mem_43_INFLS_TS_T40D34M50I0R0|Mem_43_EXFLS_TS_T40D34M50I0R0|Mem_43_EEP_TS_T40D34M50I0R0|Mcl_TS_T40D34M50I0R0|LinTrcv_43_AE_TS_T40D34M50I0R0|LinIf_TS_T40D34M50I0R0|Lin_43_LPUART_FLEXIO_TS_T40D34M50I0R0|Icu_TS_T40D34M50I0R0|I2s_TS_T40D34M50I0R0|I2c_TS_T40D34M50I0R0|Gdu_TS_T40D34M50I0R0|Fee_TS_T40D34M50I0R0|EthTrcv_TS_T40D34M50I0R0|EthSwt_TS_T40D34M50I0R0|EthIf_TS_T40D34M50I0R0|Eth_43_GMAC_TS_T40D34M50I0R0|Dpga_TS_T40D34M50I0R0|CanTrcv_43_AE_TS_T40D34M50I0R0|CanIf_TS_T40D34M50I0R0|Can_43_FLEXCAN_TS_T40D34M50I0R0|Crc_TS_T40D34M50I0R0|Ae_TS_T40D34M50I0R0" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="MCAL"/>
+						<entry excluding="Zipwire_TS_T40D34M50I0R0|WdgIf_TS_T40D34M50I0R0|Wdg_TS_T40D34M50I0R0|Spi_TS_T40D34M50I0R0|Sent_TS_T40D34M50I0R0|Rm_TS_T40D34M50I0R0|Ocu_TS_T40D34M50I0R0|Ocotp_TS_T40D34M50I0R0|MemIf_TS_T40D34M50I0R0|MemAcc_TS_T40D34M50I0R0|Mem_43_INFLS_TS_T40D34M50I0R0|Mem_43_EXFLS_TS_T40D34M50I0R0|Mem_43_EEP_TS_T40D34M50I0R0|LinTrcv_43_AE_TS_T40D34M50I0R0|LinIf_TS_T40D34M50I0R0|Lin_43_LPUART_FLEXIO_TS_T40D34M50I0R0|Icu_TS_T40D34M50I0R0|I2s_TS_T40D34M50I0R0|I2c_TS_T40D34M50I0R0|Gdu_TS_T40D34M50I0R0|Fee_TS_T40D34M50I0R0|EthTrcv_TS_T40D34M50I0R0|EthSwt_TS_T40D34M50I0R0|EthIf_TS_T40D34M50I0R0|Eth_43_GMAC_TS_T40D34M50I0R0|Dpga_TS_T40D34M50I0R0|CanTrcv_43_AE_TS_T40D34M50I0R0|CanIf_TS_T40D34M50I0R0|Can_43_FLEXCAN_TS_T40D34M50I0R0|Crc_TS_T40D34M50I0R0|Ae_TS_T40D34M50I0R0" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="MCAL"/>
 						<entry excluding="Debugger|Linker_Files" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Project_Settings"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
 					</sourceEntries>

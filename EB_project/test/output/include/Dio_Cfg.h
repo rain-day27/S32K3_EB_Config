@@ -303,6 +303,22 @@ extern "C"{
 */
 #define DioConf_DioPort_DioPort_BH  ((uint8)0x03U)
 
+/* ---------- DioPort_CL ---------- */
+
+/**
+* @brief          Symbolic name for the port DioPort_CL.
+*
+*/
+#define DioConf_DioPort_DioPort_CL  ((uint8)0x04U)
+
+/* ---------- DioPort_CH ---------- */
+
+/**
+* @brief          Symbolic name for the port DioPort_CH.
+*
+*/
+#define DioConf_DioPort_DioPort_CH  ((uint8)0x05U)
+
 
 /*=================================================================================================
 *                                             ENUMS

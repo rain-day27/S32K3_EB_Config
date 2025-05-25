@@ -34,6 +34,8 @@
 #include "Dio.h"
 #include "Gpt.h"
 #include "Adc.h"
+#include "Pwm.h"
+#include "Mcl.h"
 #include "CDD_Uart.h"
 #include "Platform.h"
 
@@ -88,6 +90,8 @@ void Mcal_Init(void)
 	/* Apply a mode configuration */
 	Mcu_SetMode(McuModeSettingConf_0);
 
+	Mcl_Init(NULL_PTR);
+
 	/* Initialize all pins using the Port driver */
 	Port_Init(&Port_Config);
 
@@ -102,6 +106,8 @@ void Mcal_Init(void)
 
 	/* Initializes an UART driver*/
 	Uart_Init(&Uart_xConfig);
+
+	Pwm_Init(NULL_PTR);
 }
 
 int main(void)

@@ -122,6 +122,24 @@
           <a:a name="IMPORTER_INFO" value="@DEF"/>
         </d:var>
       </d:ctr>
+      <d:ctr name="Mcl">
+        <d:var name="ModuleId" value="Mcl_TS_T40D34M50I0R0"/>
+        <d:var name="Enabled" value="TRUE"/>
+        <d:var name="Generate" value="TRUE"/>
+        <d:var name="LoadExistingConfigurationFile" value="TRUE"/>
+        <d:var name="SoftwareVersion" value="5.0.0 D2408"/>
+        <d:var name="ConfigurationFileURL" value="config\Mcl.xdm"/>
+        <d:var name="ConfigurationFormat" value="xdm"/>
+        <d:var name="GenerationPath" >
+          <a:a name="IMPORTER_INFO" value="@DEF"/>
+        </d:var>
+        <d:var name="PreConfig" >
+          <a:a name="IMPORTER_INFO" value="@DEF"/>
+        </d:var>
+        <d:var name="RecConfig" >
+          <a:a name="IMPORTER_INFO" value="@DEF"/>
+        </d:var>
+      </d:ctr>
       <d:ctr name="Mcu">
         <d:var name="ModuleId" value="Mcu_TS_T40D34M50I0R0"/>
         <d:var name="Enabled" value="TRUE"/>
@@ -171,6 +189,24 @@
         <d:var name="Generate" value="TRUE"/>
         <d:var name="LoadExistingConfigurationFile" value="FALSE"/>
         <d:var name="SoftwareVersion" value="5.0.0 D2408"/>
+      </d:ctr>
+      <d:ctr name="Pwm">
+        <d:var name="ModuleId" value="Pwm_TS_T40D34M50I0R0"/>
+        <d:var name="Enabled" value="TRUE"/>
+        <d:var name="Generate" value="TRUE"/>
+        <d:var name="LoadExistingConfigurationFile" value="FALSE"/>
+        <d:var name="SoftwareVersion" value="5.0.0 D2408"/>
+        <d:var name="ConfigurationFileURL" value="config\Pwm.xdm"/>
+        <d:var name="ConfigurationFormat" value="xdm"/>
+        <d:var name="GenerationPath" >
+          <a:a name="IMPORTER_INFO" value="@DEF"/>
+        </d:var>
+        <d:var name="PreConfig" >
+          <a:a name="IMPORTER_INFO" value="@DEF"/>
+        </d:var>
+        <d:var name="RecConfig" >
+          <a:a name="IMPORTER_INFO" value="@DEF"/>
+        </d:var>
       </d:ctr>
       <d:ctr name="Resource">
         <d:var name="ConfigurationFileURL" value="config\Resource.xdm"/>

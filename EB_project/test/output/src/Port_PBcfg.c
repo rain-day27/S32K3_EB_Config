@@ -114,6 +114,8 @@ static const uint32 au32Port_PinToPartitionMap[PORT_MAX_CONFIGURED_PADS_U16] =
     (uint32)0x00000001,
     (uint32)0x00000001,
     (uint32)0x00000001,
+    (uint32)0x00000001,
+    (uint32)0x00000001,
     (uint32)0x00000001
 };
 
@@ -196,11 +198,9 @@ static const Port_Siul2_UnUsedPinType Port_aUnusedPads[PORT_MAX_UNUSED_PADS_U16]
     { (uint16)71, PORT_SIUL2_0_U8 },
     { (uint16)72, PORT_SIUL2_0_U8 },
     { (uint16)73, PORT_SIUL2_0_U8 },
-    { (uint16)74, PORT_SIUL2_0_U8 },
     { (uint16)75, PORT_SIUL2_0_U8 },
     { (uint16)76, PORT_SIUL2_0_U8 },
     { (uint16)77, PORT_SIUL2_0_U8 },
-    { (uint16)78, PORT_SIUL2_0_U8 },
     { (uint16)79, PORT_SIUL2_0_U8 },
     { (uint16)80, PORT_SIUL2_0_U8 },
     { (uint16)81, PORT_SIUL2_0_U8 },
@@ -370,11 +370,13 @@ static const Port_Siul2_PinConfigType Port_aUsedPinConfigs[PORT_MAX_CONFIGURED_P
 {
     /* Mscr Id, Mscr Value, Mscr Siul Instance, Output Level, Direction, IsGpio, Direction Configurable, Mode Changeable, IsImcrAvailable, Imcr Id */
     { (uint16)5, (uint32)0x00200000, (uint8)PORT_SIUL2_0_U8, (uint8)0, PORT_PIN_OUT, (boolean)TRUE, (boolean)TRUE, (boolean)TRUE, (boolean)FALSE, 65535 },
-    { (uint16)46, (uint32)0x00200000, (uint8)PORT_SIUL2_0_U8, (uint8)0, PORT_PIN_OUT, (boolean)TRUE, (boolean)TRUE, (boolean)TRUE, (boolean)FALSE, 65535 },
+    { (uint16)46, (uint32)0x00200002, (uint8)PORT_SIUL2_0_U8, (uint8)0, PORT_PIN_OUT, (boolean)FALSE, (boolean)FALSE, (boolean)TRUE, (boolean)FALSE, 65535 },
     { (uint16)3, (uint32)0x00200006, (uint8)PORT_SIUL2_0_U8, (uint8)0, PORT_PIN_OUT, (boolean)FALSE, (boolean)FALSE, (boolean)TRUE, (boolean)FALSE, 65535 },
     { (uint16)2, (uint32)0x00080000, (uint8)PORT_SIUL2_0_U8, (uint8)0, PORT_PIN_IN, (boolean)FALSE, (boolean)FALSE, (boolean)TRUE, (boolean)TRUE, 187 },
     { (uint16)97, (uint32)0x00080000, (uint8)PORT_SIUL2_0_U8, (uint8)0, PORT_PIN_IN, (boolean)FALSE, (boolean)FALSE, (boolean)TRUE, (boolean)FALSE, 65535 },
-    { (uint16)99, (uint32)0x00080000, (uint8)PORT_SIUL2_0_U8, (uint8)0, PORT_PIN_IN, (boolean)FALSE, (boolean)FALSE, (boolean)TRUE, (boolean)FALSE, 65535 }
+    { (uint16)99, (uint32)0x00080000, (uint8)PORT_SIUL2_0_U8, (uint8)0, PORT_PIN_IN, (boolean)FALSE, (boolean)FALSE, (boolean)TRUE, (boolean)FALSE, 65535 },
+    { (uint16)74, (uint32)0x00200001, (uint8)PORT_SIUL2_0_U8, (uint8)0, PORT_PIN_OUT, (boolean)FALSE, (boolean)FALSE, (boolean)TRUE, (boolean)FALSE, 65535 },
+    { (uint16)78, (uint32)0x00200002, (uint8)PORT_SIUL2_0_U8, (uint8)0, PORT_PIN_OUT, (boolean)FALSE, (boolean)FALSE, (boolean)TRUE, (boolean)FALSE, 65535 }
 };
 
 #ifdef PORT_CODE_SIZE_OPTIMIZATION

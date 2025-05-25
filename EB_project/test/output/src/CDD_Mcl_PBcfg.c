@@ -102,8 +102,47 @@ const Mcl_ConfigType Mcl_Config =
     NULL_PTR,
     NULL_PTR,
     NULL_PTR,
-    NULL_PTR,
+    &Mcl_EmiosConfig,
     NULL_PTR
+};
+
+
+    
+
+    
+
+/** 
+* @brief   Configuration for EMIOS instance
+* @details This structure should contains data about the EMIOS common
+*          part configurated using Mcl driver
+* @implements Mcl_EmiosInstanceConfigType
+*/
+const Mcl_EmiosInstanceConfigType Mcl_EmiosInstanceConfig[1U] = 
+{
+
+    {
+        /** @brief  Hardware EMIOS instace number */
+        (uint8) 0U,
+        /** @brief  Address of configuration for EMIOS hardware instance */
+        &Emios_Mcl_Ip_0_Config
+    }
+    
+};
+    
+    
+
+/** 
+* @brief   Configuration for EMIOS initialization
+* @details This structure should contains data about the EMIOS common
+*          part configurated using Mcl driver
+* @implements Mcl_EmiosInitConfigType
+*/
+const Mcl_EmiosInitConfigType Mcl_EmiosConfig = 
+{
+    /** @brief  Number of EMIOS instaces to configure. */
+    (uint8)1,
+    /** @brief  Address of the EMIOS instances configuration. */
+    &Mcl_EmiosInstanceConfig,
 };
 
 

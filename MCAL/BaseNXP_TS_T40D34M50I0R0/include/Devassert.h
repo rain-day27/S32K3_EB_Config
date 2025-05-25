@@ -82,10 +82,27 @@
 #endif
 
 /* Implement default assert macro */
+#ifndef ZZ_MODIFY
 static inline void DevAssert(volatile boolean x)
 {
-    if(x) { } else { for(;;) {ASM_KEYWORD(BREAKPOINT_INSTR);} }
+    if(x) { }
+    else {
+    	for(;;)
+    	{ASM_KEYWORD(BREAKPOINT_INSTR);}
+    }
 }
+#else
+#include <stdio.h>
+#define DevAssert(x) \
+    do { \
+        if (!(x)) { \
+            printf("[ASSERT FAILED] %s:%d: %s\n", __FILE__, __LINE__, #x); \
+            __asm("BKPT #0"); \
+            for(;;); \
+        } \
+    } while (0)
+#endif
+
 #endif
 
  #endif /* DEVASSERT_H */

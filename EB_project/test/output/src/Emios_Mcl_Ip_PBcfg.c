@@ -107,6 +107,82 @@ extern "C"
 #include "Mcl_MemMap.h"
 
 
+
+/** 
+ * @brief   Configuration for EMIOS master bus.
+ * @details This structure contains data about the EMIOS master bus.
+ */
+const Emios_Ip_MasterBusConfigType Emios_Mcl_Ip_0_MasterBusConfig[2U] = 
+{
+    {
+        /** @brief EMIOS hardware channel used. */
+        (uint8)EMIOS_CH_23,
+        /** @brief Master bus mode for use. */
+        EMIOS_IP_MCB_UP_COUNTER,
+        /** @brief  Default period */
+        (uint32) 10000U,
+        /** @brief  Offset at start. */
+        (uint32) 0U,
+        /** @brief  Prescaler value */
+        (uint8) 15U,
+        /** @brief  Alternate prescaler value */
+        (uint8) 0U,
+        /** @brief  Channel Allow Debug Mode */
+        (boolean)TRUE
+    },
+    {
+        /** @brief EMIOS hardware channel used. */
+        (uint8)EMIOS_CH_8,
+        /** @brief Master bus mode for use. */
+        EMIOS_IP_MCB_UP_COUNTER,
+        /** @brief  Default period */
+        (uint32) 10000U,
+        /** @brief  Offset at start. */
+        (uint32) 0U,
+        /** @brief  Prescaler value */
+        (uint8) 15U,
+        /** @brief  Alternate prescaler value */
+        (uint8) 0U,
+        /** @brief  Channel Allow Debug Mode */
+        (boolean)TRUE
+    }
+};
+
+
+
+/** 
+* @brief   Configuration for EMIOS IP instance
+* @details This structure should contains data about the EMIOS common
+*          part configurated using Mcl driver
+* @implements Emios_Ip_GlobalConfigType
+*/
+/* Emios instance configuration of global parameters */
+const Emios_Ip_GlobalConfigType Emios_Ip_0_GlobalConfig = 
+{
+    /** @brief  Allow Debug Mode */
+    (boolean)TRUE,
+    /** @brief  Clock Divider Value */
+    (uint8) 0U,
+    /** @brief  Enable Global Time Base */
+    (boolean)TRUE
+};
+      
+
+
+/** 
+ * @brief   Configuration for EMIOS initialization.
+ * @details This structure contains data about one instance of EMIOS.
+ */
+const Emios_Mcl_Ip_ConfigType Emios_Mcl_Ip_0_Config = 
+{
+    /** @brief Number of master buses used by this EMIOS IP. */
+    (uint8)2,
+    /** @brief EMIOS instance configuration. */
+    &Emios_Ip_0_GlobalConfig,
+    /** @brief EMIOS master buses configuration. */
+    &Emios_Mcl_Ip_0_MasterBusConfig
+};
+
 #define MCL_STOP_SEC_CONFIG_DATA_UNSPECIFIED
 #include "Mcl_MemMap.h"
 

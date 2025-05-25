@@ -296,7 +296,8 @@ extern "C"{
 /*-----------------------------------------------/
 /  PRECOMPILE                                    /
 /-----------------------------------------------*/
-#define MCL_PRECOMPILE_SUPPORT                     STD_OFF
+/* Mcl Pre Compile Switch */
+#define MCL_PRECOMPILE_SUPPORT                     STD_ON
 
 /*==================================================================================================
                                              ENUMS

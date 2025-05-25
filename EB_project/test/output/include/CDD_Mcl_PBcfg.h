@@ -108,6 +108,17 @@ extern const Mcl_ConfigType Mcl_Config;
 
 
 
+    
+
+
+
+/* EMIOS instance configuration. */
+extern const Mcl_EmiosInstanceConfigType Mcl_EmiosInstanceConfig[1U];
+
+/* EMIOS sturcture used for intialization. */
+extern const Mcl_EmiosInitConfigType Mcl_EmiosConfig;
+
+
 
 
 

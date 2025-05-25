@@ -1,7 +1,7 @@
 /*==================================================================================================
 *   Project              : RTD AUTOSAR 4.7
 *   Platform             : CORTEXM
-*   Peripheral           : SIUL2
+*   Peripheral           : Emios Flexio FlexPwm eTpu
 *   Dependencies         : none
 *
 *   Autosar Version      : 4.7.0
@@ -22,9 +22,9 @@
 ==================================================================================================*/
 
 /**
-*   @file    Tspc_Port_Ip_PBcfg.c
+*   @file       Flexio_Pwm_Ip_PBcfg.c
 *
-*   @addtogroup Port_CFG
+*   @addtogroup flexio_pwm_ip FlexIO Pwm IPL
 *   @{
 */
 
@@ -32,47 +32,46 @@
 extern "C"{
 #endif
 
+
 /*==================================================================================================
 *                                          INCLUDE FILES
 * 1) system and project includes
 * 2) needed interfaces from external units
 * 3) internal and external interfaces from this unit
 ==================================================================================================*/
-#include "Tspc_Port_Ip.h"
-
-
+#include "Flexio_Pwm_Ip_Types.h"
 
 /*==================================================================================================
 *                                 SOURCE FILE VERSION INFORMATION
 ==================================================================================================*/
-#define TSPC_PORT_IP_VENDOR_ID_PBCFG_C                       43
-#define TSPC_PORT_IP_AR_RELEASE_MAJOR_VERSION_PBCFG_C        4
-#define TSPC_PORT_IP_AR_RELEASE_MINOR_VERSION_PBCFG_C        7
-#define TSPC_PORT_IP_AR_RELEASE_REVISION_VERSION_PBCFG_C     0
-#define TSPC_PORT_IP_SW_MAJOR_VERSION_PBCFG_C                5
-#define TSPC_PORT_IP_SW_MINOR_VERSION_PBCFG_C                0
-#define TSPC_PORT_IP_SW_PATCH_VERSION_PBCFG_C                0
+#define FLEXIO_PWM_IP_PBCFG_VENDOR_ID_C                      43
+#define FLEXIO_PWM_IP_PBCFG_AR_RELEASE_MAJOR_VERSION_C       4
+#define FLEXIO_PWM_IP_PBCFG_AR_RELEASE_MINOR_VERSION_C       7
+#define FLEXIO_PWM_IP_PBCFG_AR_RELEASE_REVISION_VERSION_C    0
+#define FLEXIO_PWM_IP_PBCFG_SW_MAJOR_VERSION_C               5
+#define FLEXIO_PWM_IP_PBCFG_SW_MINOR_VERSION_C               0
+#define FLEXIO_PWM_IP_PBCFG_SW_PATCH_VERSION_C               0
 
 /*==================================================================================================
 *                                       FILE VERSION CHECKS
 ==================================================================================================*/
-/* Check if Tspc_Port_Ip_PBcfg.c and Tspc_Port_Ip.h are of the same vendor */
-#if (TSPC_PORT_IP_VENDOR_ID_PBCFG_C != TSPC_PORT_IP_VENDOR_ID_H)
-    #error "Tspc_Port_Ip_PBcfg.c and Tspc_Port_Ip.h have different vendor ids"
+/* Check if header file and Flexio_Pwm_Ip_Types.h header file are of the same vendor */
+#if (FLEXIO_PWM_IP_PBCFG_VENDOR_ID_C != FLEXIO_PWM_IP_TYPES_VENDOR_ID)
+    #error "Vendor IDs of Flexio_Pwm_Ip_PBcfg.h and Flexio_Pwm_Ip_Types.h are different."
 #endif
-/* Check if Tspc_Port_Ip_PBcfg.c and Tspc_Port_Ip.h are of the same Autosar version */
-#if ((TSPC_PORT_IP_AR_RELEASE_MAJOR_VERSION_PBCFG_C    != TSPC_PORT_IP_AR_RELEASE_MAJOR_VERSION_H) || \
-     (TSPC_PORT_IP_AR_RELEASE_MINOR_VERSION_PBCFG_C    != TSPC_PORT_IP_AR_RELEASE_MINOR_VERSION_H) || \
-     (TSPC_PORT_IP_AR_RELEASE_REVISION_VERSION_PBCFG_C != TSPC_PORT_IP_AR_RELEASE_REVISION_VERSION_H) \
-    )
-    #error "AutoSar Version Numbers of Tspc_Port_Ip_PBcfg.c and Tspc_Port_Ip.h are different"
+
+/* Check if header file and Flexio_Pwm_Ip_Types.h header file are of the same AUTOSAR version */
+#if ((FLEXIO_PWM_IP_PBCFG_AR_RELEASE_MAJOR_VERSION_C    != FLEXIO_PWM_IP_TYPES_AR_RELEASE_MAJOR_VERSION) || \
+     (FLEXIO_PWM_IP_PBCFG_AR_RELEASE_MINOR_VERSION_C    != FLEXIO_PWM_IP_TYPES_AR_RELEASE_MINOR_VERSION) || \
+     (FLEXIO_PWM_IP_PBCFG_AR_RELEASE_REVISION_VERSION_C != FLEXIO_PWM_IP_TYPES_AR_RELEASE_REVISION_VERSION))
+    #error "AUTOSAR version numbers of Flexio_Pwm_Ip_PBcfg.h and Flexio_Pwm_Ip_Types.h are different."
 #endif
-/* Check if Tspc_Port_Ip_PBcfg.c and Tspc_Port_Ip.h are of the same software version */
-#if ((TSPC_PORT_IP_SW_MAJOR_VERSION_PBCFG_C != TSPC_PORT_IP_SW_MAJOR_VERSION_H) || \
-     (TSPC_PORT_IP_SW_MINOR_VERSION_PBCFG_C != TSPC_PORT_IP_SW_MINOR_VERSION_H) || \
-     (TSPC_PORT_IP_SW_PATCH_VERSION_PBCFG_C != TSPC_PORT_IP_SW_PATCH_VERSION_H)    \
-    )
-    #error "Software Version Numbers of Tspc_Port_Ip_PBcfg.c and Tspc_Port_Ip.h are different"
+
+/* Check if header file and Flexio_Pwm_Ip_Types.h header file are of the same software version */
+#if ((FLEXIO_PWM_IP_PBCFG_SW_MAJOR_VERSION_C != FLEXIO_PWM_IP_TYPES_SW_MAJOR_VERSION) || \
+     (FLEXIO_PWM_IP_PBCFG_SW_MINOR_VERSION_C != FLEXIO_PWM_IP_TYPES_SW_MINOR_VERSION) || \
+     (FLEXIO_PWM_IP_PBCFG_SW_PATCH_VERSION_C != FLEXIO_PWM_IP_TYPES_SW_PATCH_VERSION))
+    #error "Software version numbers of Flexio_Pwm_Ip_PBcfg.h and Flexio_Pwm_Ip_Types.h are different."
 #endif
 
 /*==================================================================================================
@@ -90,55 +89,11 @@ extern "C"{
 /*==================================================================================================
 *                                         LOCAL VARIABLES
 ==================================================================================================*/
-/*==================================================================================================
-*                                        GLOBAL CONSTANTS
-==================================================================================================*/
 
 /*==================================================================================================
-*                                        GLOBAL VARIABLES
+*                                    LOCAL FUNCTION PROTOTYPES
 ==================================================================================================*/
 
-#define PORT_START_SEC_CONFIG_DATA_UNSPECIFIED
-#include "Port_MemMap.h"
-
-const Tspc_Port_Ip_ObeGroupConfig aTspc_InitConfigArr[NUM_OF_OBE_GROUP_CONFIG] =
-{
-    {
-        .obeGroupSelect = 0,
-        .obeGroupIndex  = 65535
-    },
-    {
-        .obeGroupSelect = 0,
-        .obeGroupIndex  = 65535
-    },
-    {
-        .obeGroupSelect = 0,
-        .obeGroupIndex  = 65535
-    },
-    {
-        .obeGroupSelect = 0,
-        .obeGroupIndex  = 65535
-    },
-    {
-        .obeGroupSelect = 0,
-        .obeGroupIndex  = 0
-    },
-    {
-        .obeGroupSelect = 0,
-        .obeGroupIndex  = 10
-    },
-    {
-        .obeGroupSelect = 0,
-        .obeGroupIndex  = 65535
-    },
-    {
-        .obeGroupSelect = 0,
-        .obeGroupIndex  = 65535
-    }
-};
-
-#define PORT_STOP_SEC_CONFIG_DATA_UNSPECIFIED
-#include "Port_MemMap.h"
 /*==================================================================================================
 *                                        GLOBAL CONSTANTS
 ==================================================================================================*/
@@ -159,8 +114,10 @@ const Tspc_Port_Ip_ObeGroupConfig aTspc_InitConfigArr[NUM_OF_OBE_GROUP_CONFIG] =
 *                                        GLOBAL FUNCTIONS
 ==================================================================================================*/
 
+
 #ifdef __cplusplus
 }
 #endif
 
 /** @} */
+

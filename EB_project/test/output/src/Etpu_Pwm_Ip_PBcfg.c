@@ -1,7 +1,7 @@
 /*==================================================================================================
 *   Project              : RTD AUTOSAR 4.7
 *   Platform             : CORTEXM
-*   Peripheral           : SIUL2
+*   Peripheral           : Emios Flexio FlexPwm eTpu
 *   Dependencies         : none
 *
 *   Autosar Version      : 4.7.0
@@ -22,15 +22,17 @@
 ==================================================================================================*/
 
 /**
-*   @file    Tspc_Port_Ip_PBcfg.c
+*   @file    Etpu_Pwm_Ip_PBcfg.c
 *
-*   @addtogroup Port_CFG
+*   @addtogroup etpu_pwm_ip Etpu Pwm
 *   @{
 */
 
 #ifdef __cplusplus
-extern "C"{
+extern "C"
+{
 #endif
+
 
 /*==================================================================================================
 *                                          INCLUDE FILES
@@ -38,43 +40,42 @@ extern "C"{
 * 2) needed interfaces from external units
 * 3) internal and external interfaces from this unit
 ==================================================================================================*/
-#include "Tspc_Port_Ip.h"
-
-
+#include "Etpu_Pwm_Ip_Types.h"
 
 /*==================================================================================================
 *                                 SOURCE FILE VERSION INFORMATION
 ==================================================================================================*/
-#define TSPC_PORT_IP_VENDOR_ID_PBCFG_C                       43
-#define TSPC_PORT_IP_AR_RELEASE_MAJOR_VERSION_PBCFG_C        4
-#define TSPC_PORT_IP_AR_RELEASE_MINOR_VERSION_PBCFG_C        7
-#define TSPC_PORT_IP_AR_RELEASE_REVISION_VERSION_PBCFG_C     0
-#define TSPC_PORT_IP_SW_MAJOR_VERSION_PBCFG_C                5
-#define TSPC_PORT_IP_SW_MINOR_VERSION_PBCFG_C                0
-#define TSPC_PORT_IP_SW_PATCH_VERSION_PBCFG_C                0
+#define ETPU_PWM_IP_PB_CFG_VENDOR_ID_C                       43
+#define ETPU_PWM_IP_PB_CFG_AR_RELEASE_MAJOR_VERSION_C        4
+#define ETPU_PWM_IP_PB_CFG_AR_RELEASE_MINOR_VERSION_C        7
+#define ETPU_PWM_IP_PB_CFG_AR_RELEASE_REVISION_VERSION_C     0
+#define ETPU_PWM_IP_PB_CFG_SW_MAJOR_VERSION_C                5
+#define ETPU_PWM_IP_PB_CFG_SW_MINOR_VERSION_C                0
+#define ETPU_PWM_IP_PB_CFG_SW_PATCH_VERSION_C                0
 
 /*==================================================================================================
 *                                       FILE VERSION CHECKS
 ==================================================================================================*/
-/* Check if Tspc_Port_Ip_PBcfg.c and Tspc_Port_Ip.h are of the same vendor */
-#if (TSPC_PORT_IP_VENDOR_ID_PBCFG_C != TSPC_PORT_IP_VENDOR_ID_H)
-    #error "Tspc_Port_Ip_PBcfg.c and Tspc_Port_Ip.h have different vendor ids"
-#endif
-/* Check if Tspc_Port_Ip_PBcfg.c and Tspc_Port_Ip.h are of the same Autosar version */
-#if ((TSPC_PORT_IP_AR_RELEASE_MAJOR_VERSION_PBCFG_C    != TSPC_PORT_IP_AR_RELEASE_MAJOR_VERSION_H) || \
-     (TSPC_PORT_IP_AR_RELEASE_MINOR_VERSION_PBCFG_C    != TSPC_PORT_IP_AR_RELEASE_MINOR_VERSION_H) || \
-     (TSPC_PORT_IP_AR_RELEASE_REVISION_VERSION_PBCFG_C != TSPC_PORT_IP_AR_RELEASE_REVISION_VERSION_H) \
-    )
-    #error "AutoSar Version Numbers of Tspc_Port_Ip_PBcfg.c and Tspc_Port_Ip.h are different"
-#endif
-/* Check if Tspc_Port_Ip_PBcfg.c and Tspc_Port_Ip.h are of the same software version */
-#if ((TSPC_PORT_IP_SW_MAJOR_VERSION_PBCFG_C != TSPC_PORT_IP_SW_MAJOR_VERSION_H) || \
-     (TSPC_PORT_IP_SW_MINOR_VERSION_PBCFG_C != TSPC_PORT_IP_SW_MINOR_VERSION_H) || \
-     (TSPC_PORT_IP_SW_PATCH_VERSION_PBCFG_C != TSPC_PORT_IP_SW_PATCH_VERSION_H)    \
-    )
-    #error "Software Version Numbers of Tspc_Port_Ip_PBcfg.c and Tspc_Port_Ip.h are different"
+/* Check if source file and Etpu_Pwm_Ip_Types.h file are of the same vendor */
+#if (ETPU_PWM_IP_PB_CFG_VENDOR_ID_C != ETPU_PWM_IP_TYPES_VENDOR_ID)
+    #error "Vendor IDs of Etpu_Pwm_PBcfg.c and Etpu_Pwm_Ip_Types.h are different."
 #endif
 
+/* Check if source file and Etpu_Pwm_Ip_Types.h file are of the same AUTOSAR version */
+#if ((ETPU_PWM_IP_PB_CFG_AR_RELEASE_MAJOR_VERSION_C    != ETPU_PWM_IP_TYPES_AR_RELEASE_MAJOR_VERSION) || \
+     (ETPU_PWM_IP_PB_CFG_AR_RELEASE_MINOR_VERSION_C    != ETPU_PWM_IP_TYPES_AR_RELEASE_MINOR_VERSION) || \
+     (ETPU_PWM_IP_PB_CFG_AR_RELEASE_REVISION_VERSION_C != ETPU_PWM_IP_TYPES_AR_RELEASE_REVISION_VERSION))
+    #error "AUTOSAR version numbers of Etpu_Pwm_PBcfg.c and Etpu_Pwm_Ip_Types.h are different."
+#endif
+
+/* Check if source file and Etpu_Pwm_Ip_Types.h file are of the same Software version */
+#if ((ETPU_PWM_IP_PB_CFG_SW_MAJOR_VERSION_C != ETPU_PWM_IP_TYPES_SW_MAJOR_VERSION)  || \
+     (ETPU_PWM_IP_PB_CFG_SW_MINOR_VERSION_C != ETPU_PWM_IP_TYPES_SW_MINOR_VERSION)  || \
+     (ETPU_PWM_IP_PB_CFG_SW_PATCH_VERSION_C != ETPU_PWM_IP_TYPES_SW_PATCH_VERSION))
+    #error "Software version numbers of Etpu_Pwm_PBcfg.c and Etpu_Pwm_Ip_Types.h are different."
+#endif
+
+#if (ETPU_PWM_IP_USED == STD_ON)
 /*==================================================================================================
 *                           LOCAL TYPEDEFS (STRUCTURES, UNIONS, ENUMS)
 ==================================================================================================*/
@@ -90,58 +91,27 @@ extern "C"{
 /*==================================================================================================
 *                                         LOCAL VARIABLES
 ==================================================================================================*/
+
+/*==================================================================================================
+*                                    LOCAL FUNCTION PROTOTYPES
+==================================================================================================*/
+#define PWM_START_SEC_CODE
+#include "Pwm_MemMap.h"
+
+
+
+#define PWM_STOP_SEC_CODE
+#include "Pwm_MemMap.h"
+
 /*==================================================================================================
 *                                        GLOBAL CONSTANTS
 ==================================================================================================*/
+#define PWM_START_SEC_CONFIG_DATA_UNSPECIFIED
+#include "Pwm_MemMap.h"
 
-/*==================================================================================================
-*                                        GLOBAL VARIABLES
-==================================================================================================*/
 
-#define PORT_START_SEC_CONFIG_DATA_UNSPECIFIED
-#include "Port_MemMap.h"
-
-const Tspc_Port_Ip_ObeGroupConfig aTspc_InitConfigArr[NUM_OF_OBE_GROUP_CONFIG] =
-{
-    {
-        .obeGroupSelect = 0,
-        .obeGroupIndex  = 65535
-    },
-    {
-        .obeGroupSelect = 0,
-        .obeGroupIndex  = 65535
-    },
-    {
-        .obeGroupSelect = 0,
-        .obeGroupIndex  = 65535
-    },
-    {
-        .obeGroupSelect = 0,
-        .obeGroupIndex  = 65535
-    },
-    {
-        .obeGroupSelect = 0,
-        .obeGroupIndex  = 0
-    },
-    {
-        .obeGroupSelect = 0,
-        .obeGroupIndex  = 10
-    },
-    {
-        .obeGroupSelect = 0,
-        .obeGroupIndex  = 65535
-    },
-    {
-        .obeGroupSelect = 0,
-        .obeGroupIndex  = 65535
-    }
-};
-
-#define PORT_STOP_SEC_CONFIG_DATA_UNSPECIFIED
-#include "Port_MemMap.h"
-/*==================================================================================================
-*                                        GLOBAL CONSTANTS
-==================================================================================================*/
+#define PWM_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+#include "Pwm_MemMap.h"
 
 /*==================================================================================================
 *                                        GLOBAL VARIABLES
@@ -159,6 +129,7 @@ const Tspc_Port_Ip_ObeGroupConfig aTspc_InitConfigArr[NUM_OF_OBE_GROUP_CONFIG] =
 *                                        GLOBAL FUNCTIONS
 ==================================================================================================*/
 
+#endif /* ETPU_PWM_IP_USED == STD_ON */
 #ifdef __cplusplus
 }
 #endif

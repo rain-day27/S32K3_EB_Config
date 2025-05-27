@@ -72,6 +72,18 @@
                     <d:lst name="DioChannelGroup" type="MAP"/>
                     <d:lst name="DioPortEcucPartitionRef"/>
                   </d:ctr>
+                  <d:ctr name="DioPort_CL" type="IDENTIFIABLE">
+                    <d:var name="DioPortId" type="INTEGER" value="4"/>
+                    <d:lst name="DioChannel" type="MAP"/>
+                    <d:lst name="DioChannelGroup" type="MAP"/>
+                    <d:lst name="DioPortEcucPartitionRef"/>
+                  </d:ctr>
+                  <d:ctr name="DioPort_CH" type="IDENTIFIABLE">
+                    <d:var name="DioPortId" type="INTEGER" value="5"/>
+                    <d:lst name="DioChannel" type="MAP"/>
+                    <d:lst name="DioChannelGroup" type="MAP"/>
+                    <d:lst name="DioPortEcucPartitionRef"/>
+                  </d:ctr>
                 </d:lst>
               </d:ctr>
               <d:ctr name="DioGeneral" type="IDENTIFIABLE">

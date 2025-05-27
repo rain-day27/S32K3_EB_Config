@@ -109,9 +109,7 @@
                       <a:a name="IMPORTER_INFO" value="@DEF"/>
                     </d:var>
                     <d:var name="AdcHwUnitResolution" type="ENUMERATION" 
-                           value="RESOLUTION_14">
-                      <a:a name="IMPORTER_INFO" value="@DEF"/>
-                    </d:var>
+                           value="RESOLUTION_12"/>
                     <d:var name="AdcHwUnitBypassResolution" type="BOOLEAN" 
                            value="false">
                       <a:a name="IMPORTER_INFO" value="@DEF"/>

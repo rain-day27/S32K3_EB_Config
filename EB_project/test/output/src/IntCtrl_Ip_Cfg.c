@@ -74,11 +74,12 @@ static const IntCtrl_Ip_IrqConfigType aIrqConfiguration[] = {
     {LPUART0_IRQn, (boolean)TRUE, 1U, &Uart0_Irq_handler},
     {PIT0_IRQn, (boolean)TRUE, 15U, &Pit0_Irq_handler},
     {ADC0_IRQn, (boolean)TRUE, 4U, &Adc0_Irq_handler},
+    {EMIOS1_5_IRQn, (boolean)TRUE, 2U, &eMIOS1_5_Irq_handler},
 };
 
 /* Configuration structure for interrupt controller */
 const IntCtrl_Ip_CtrlConfigType intCtrlConfig = {
-    3U,
+    4U,
     
     
     aIrqConfiguration

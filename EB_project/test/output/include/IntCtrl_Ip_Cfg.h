@@ -84,6 +84,7 @@ extern const IntCtrl_Ip_CtrlConfigType intCtrlConfig;
 extern void Uart0_Irq_handler(void);
 extern void Pit0_Irq_handler(void);
 extern void Adc0_Irq_handler(void);
+extern void eMIOS1_5_Irq_handler(void);
 
 #ifdef  PLATFORM_IP_ENABLE_INT_CTRL
 #if  (PLATFORM_IP_ENABLE_INT_CTRL == STD_ON)

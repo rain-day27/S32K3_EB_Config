@@ -4,6 +4,7 @@
 #include "Gpt.h"
 #include "Adc.h"
 #include "Gpt_Irq.h"
+#include "eMIOS_Mcl_ip_irq.h"
 
 #include "FreeRTOS.h"
 #include "task.h"
@@ -52,4 +53,10 @@ void Adc0_Irq_handler(void)
 {
 	Adc_Sar_0_Isr();
 }
+
+void eMIOS1_5_Irq_handler(void)
+{
+	EMIOS1_5_IRQ();
+}
+
 

@@ -36,6 +36,7 @@
 #include "Adc.h"
 #include "Pwm.h"
 #include "Mcl.h"
+#include "Icu.h"
 #include "CDD_Uart.h"
 #include "Platform.h"
 
@@ -108,6 +109,8 @@ void Mcal_Init(void)
 	Uart_Init(&Uart_xConfig);
 
 	Pwm_Init(NULL_PTR);
+
+	Icu_Init(NULL_PTR);
 }
 
 int main(void)

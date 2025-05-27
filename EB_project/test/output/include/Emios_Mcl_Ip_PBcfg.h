@@ -103,12 +103,18 @@ extern "C"
 
 /* Emios channel configuration */
 extern const Emios_Ip_MasterBusConfigType Emios_Mcl_Ip_0_MasterBusConfig[2U];
+/* Emios channel configuration */
+extern const Emios_Ip_MasterBusConfigType Emios_Mcl_Ip_1_MasterBusConfig[1U];
 
 /* Emios instance configuration of global parameters */
 extern const Emios_Ip_GlobalConfigType Emios_Ip_0_GlobalConfig;
+/* Emios instance configuration of global parameters */
+extern const Emios_Ip_GlobalConfigType Emios_Ip_1_GlobalConfig;
 
 /* EMIOS configuration structure used for initialization. */
 extern const Emios_Mcl_Ip_ConfigType Emios_Mcl_Ip_0_Config;
+/* EMIOS configuration structure used for initialization. */
+extern const Emios_Mcl_Ip_ConfigType Emios_Mcl_Ip_1_Config;
 
 #define MCL_STOP_SEC_CONFIG_DATA_UNSPECIFIED
 #include "Mcl_MemMap.h"

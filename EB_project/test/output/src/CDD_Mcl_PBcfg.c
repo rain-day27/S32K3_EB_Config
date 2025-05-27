@@ -117,7 +117,7 @@ const Mcl_ConfigType Mcl_Config =
 *          part configurated using Mcl driver
 * @implements Mcl_EmiosInstanceConfigType
 */
-const Mcl_EmiosInstanceConfigType Mcl_EmiosInstanceConfig[1U] = 
+const Mcl_EmiosInstanceConfigType Mcl_EmiosInstanceConfig[2U] = 
 {
 
     {
@@ -125,6 +125,13 @@ const Mcl_EmiosInstanceConfigType Mcl_EmiosInstanceConfig[1U] =
         (uint8) 0U,
         /** @brief  Address of configuration for EMIOS hardware instance */
         &Emios_Mcl_Ip_0_Config
+    },
+    
+    {
+        /** @brief  Hardware EMIOS instace number */
+        (uint8) 1U,
+        /** @brief  Address of configuration for EMIOS hardware instance */
+        &Emios_Mcl_Ip_1_Config
     }
     
 };
@@ -140,7 +147,7 @@ const Mcl_EmiosInstanceConfigType Mcl_EmiosInstanceConfig[1U] =
 const Mcl_EmiosInitConfigType Mcl_EmiosConfig = 
 {
     /** @brief  Number of EMIOS instaces to configure. */
-    (uint8)1,
+    (uint8)2,
     /** @brief  Address of the EMIOS instances configuration. */
     &Mcl_EmiosInstanceConfig,
 };

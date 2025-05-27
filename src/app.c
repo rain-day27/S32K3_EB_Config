@@ -10,6 +10,7 @@
 #include "Dio.h"
 #include "Adc.h"
 #include "Pwm.h"
+#include "Icu.h"
 
 #include "fifo.h"
 #include "app.h"
@@ -20,6 +21,7 @@
 
 Std_ReturnType adc0_group0_ret = E_OK;
 Adc_ValueGroupType adc0_group0_result[e_adc0_ch_max] = {0};
+Icu_DutyCycleType DutyCycle = {0,0};
 
 /* 1s flash once. */
 void board_break_led(void)
@@ -101,6 +103,13 @@ void adc_data_updata(void)
 }
 
 #endif
+
+void icu_ch2_duty_mesure(void)
+{
+	Icu_GetDutyCycleValues(IcuChannel_0, &DutyCycle);
+	APP_DEBUG("[ICU] active = %d prior = %d)", DutyCycle.ActiveTime, DutyCycle.PeriodTime);
+}
+
 void user_adc_init(void)
 {
 	Adc_SetupResultBuffer(AdcGroup_0, adc0_group0_result);
@@ -110,13 +119,21 @@ void user_adc_init(void)
 void app_task(void* param)
 {
 	(void)param;
+	uint32_t app_count = 0;
+
 	user_adc_init();
+	Icu_StartSignalMeasurement(IcuChannel_0);
 
 	while(1)
 	{
 		board_break_led();
-		adc_data_updata();
+		if(app_count % 100 == 0)	//1s
+		{
+			adc_data_updata();
+			icu_ch2_duty_mesure();
+		}
 
+		app_count++;
 		vTaskDelay(10);
 	}
 }

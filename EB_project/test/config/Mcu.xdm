@@ -1771,6 +1771,19 @@
                         <d:var name="McuClockFrequencySelect" 
                                type="ENUMERATION" value="FLEXCAN_PE_CLK0_2"/>
                       </d:ctr>
+                      <d:ctr name="eMIOS_0_CLK" type="IDENTIFIABLE">
+                        <d:var name="McuClockReferencePointFrequency" 
+                               type="FLOAT" value="1.6E8">
+                          <a:a name="IMPORTER_INFO">
+                            <a:v>@DEF</a:v>
+                            <a:v>@CALC</a:v>
+                          </a:a>
+                        </d:var>
+                        <d:var name="McuClockFrequencySelect" 
+                               type="ENUMERATION" value="CORE_CLK">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                      </d:ctr>
                     </d:lst>
                   </d:ctr>
                 </d:lst>
@@ -2049,7 +2062,7 @@
                             </a:a>
                           </d:var>
                           <d:var name="McuPeripheralClockEnable" type="BOOLEAN" 
-                                 value="false"/>
+                                 value="true"/>
                         </d:ctr>
                         <d:ctr name="McuPeripheral_3" type="IDENTIFIABLE">
                           <d:var name="McuPeripheralName" type="ENUMERATION" 

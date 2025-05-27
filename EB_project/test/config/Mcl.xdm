@@ -18,13 +18,9 @@
           <d:chc name="Mcl" type="AR-ELEMENT" value="MODULE-CONFIGURATION">
             <d:ctr type="MODULE-CONFIGURATION">
               <a:a name="DEF" value="ASPath:/TS_T40D34M50I0R0/Mcl"/>
-              <d:var name="POST_BUILD_VARIANT_USED" type="BOOLEAN" value="true">
-                <a:a name="IMPORTER_INFO" value="@DEF"/>
-              </d:var>
+              <d:var name="POST_BUILD_VARIANT_USED" type="BOOLEAN" value="false"/>
               <d:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION" 
-                     value="VariantPostBuild">
-                <a:a name="IMPORTER_INFO" value="@DEF"/>
-              </d:var>
+                     value="VariantPreCompile"/>
               <d:ctr name="MclGeneral" type="IDENTIFIABLE">
                 <d:var name="MclEnableDemReportErrorStatus" type="BOOLEAN" 
                        value="false">
@@ -65,10 +61,7 @@
                   </d:var>
                 </d:ctr>
                 <d:ctr name="MclEmiosCommon" type="IDENTIFIABLE">
-                  <d:var name="MclEnableEmiosCommon" type="BOOLEAN" 
-                         value="false">
-                    <a:a name="IMPORTER_INFO" value="@DEF"/>
-                  </d:var>
+                  <d:var name="MclEnableEmiosCommon" type="BOOLEAN" value="true"/>
                 </d:ctr>
                 <d:ctr name="MclFlexioCommon" type="IDENTIFIABLE">
                   <d:var name="MclEnableFlexioCommon" type="BOOLEAN" 
@@ -77,9 +70,7 @@
                   </d:var>
                 </d:ctr>
                 <d:ctr name="MclLcuConfig" type="IDENTIFIABLE">
-                  <d:var name="MclEnableLcu" type="BOOLEAN" value="false">
-                    <a:a name="IMPORTER_INFO" value="@DEF"/>
-                  </d:var>
+                  <d:var name="MclEnableLcu" type="BOOLEAN" value="false"/>
                   <d:var name="MclEnableLcuSyncFunc" type="BOOLEAN" 
                          value="false">
                     <a:a name="IMPORTER_INFO" value="@DEF"/>
@@ -97,7 +88,144 @@
                 <d:lst name="trgmuxInstaceList" type="MAP"/>
                 <d:lst name="trgmuxLogicGroup" type="MAP"/>
                 <d:lst name="lcuConfiguration" type="MAP"/>
-                <d:lst name="EmiosCommon" type="MAP"/>
+                <d:lst name="EmiosCommon" type="MAP">
+                  <d:ctr name="EmiosCommon_0" type="IDENTIFIABLE">
+                    <d:var name="EmiosMclInstances" type="ENUMERATION" 
+                           value="EMIOS_0">
+                      <a:a name="IMPORTER_INFO">
+                        <a:v>@DEF</a:v>
+                        <a:v>@CALC</a:v>
+                      </a:a>
+                    </d:var>
+                    <d:var name="EmiosMclEnableFreezState" type="BOOLEAN" 
+                           value="true">
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="EmiosMclEnableGlobalTimeBase" type="BOOLEAN" 
+                           value="true">
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="EmiosMclClkDivVal" type="INTEGER" value="1">
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:ref name="EmiosCommonEcucPartitionRef" type="REFERENCE" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:ref>
+                    <d:lst name="EmiosMclMasterBus" type="MAP">
+                      <d:ctr name="EmiosMclMasterBus_EM0_BUS_A" 
+                             type="IDENTIFIABLE">
+                        <d:var name="EmiosMclMasterBusNumber" 
+                               type="ENUMERATION" value="EMIOS_CH_23"/>
+                        <d:var name="EmiosMclMasterBusModeType" 
+                               type="ENUMERATION" value="MCB_UP_COUNTER"/>
+                        <d:var name="EmiosMclDefaultPeriod" type="INTEGER" 
+                               value="10000"/>
+                        <d:var name="EmiosMclFirstOffsetValue" type="INTEGER" 
+                               value="0">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="EmiosMclMasterBusPrescaler" 
+                               type="ENUMERATION" value="DIV_16"/>
+                        <d:var name="EmiosMclMasterBusAltPrescaler" 
+                               type="ENUMERATION" value="DIV_1">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="EmiosMclChannelAllowDebugMode" 
+                               type="BOOLEAN" value="true">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="EmiosMclPwmExclusiveAccess" type="BOOLEAN" 
+                               value="true">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                      </d:ctr>
+                      <d:ctr name="EmiosMclMasterBus_EM0_BUS_C" 
+                             type="IDENTIFIABLE">
+                        <d:var name="EmiosMclMasterBusNumber" 
+                               type="ENUMERATION" value="EMIOS_CH_8">
+                          <a:a name="IMPORTER_INFO">
+                            <a:v>@DEF</a:v>
+                            <a:v>@CALC</a:v>
+                          </a:a>
+                        </d:var>
+                        <d:var name="EmiosMclMasterBusModeType" 
+                               type="ENUMERATION" value="MCB_UP_COUNTER"/>
+                        <d:var name="EmiosMclDefaultPeriod" type="INTEGER" 
+                               value="10000"/>
+                        <d:var name="EmiosMclFirstOffsetValue" type="INTEGER" 
+                               value="0">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="EmiosMclMasterBusPrescaler" 
+                               type="ENUMERATION" value="DIV_16"/>
+                        <d:var name="EmiosMclMasterBusAltPrescaler" 
+                               type="ENUMERATION" value="DIV_1">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="EmiosMclChannelAllowDebugMode" 
+                               type="BOOLEAN" value="true">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="EmiosMclPwmExclusiveAccess" type="BOOLEAN" 
+                               value="true">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                      </d:ctr>
+                    </d:lst>
+                  </d:ctr>
+                  <d:ctr name="EmiosCommon_1" type="IDENTIFIABLE">
+                    <d:var name="EmiosMclInstances" type="ENUMERATION" 
+                           value="EMIOS_1">
+                      <a:a name="IMPORTER_INFO">
+                        <a:v>@DEF</a:v>
+                        <a:v>@CALC</a:v>
+                      </a:a>
+                    </d:var>
+                    <d:var name="EmiosMclEnableFreezState" type="BOOLEAN" 
+                           value="true">
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="EmiosMclEnableGlobalTimeBase" type="BOOLEAN" 
+                           value="true">
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="EmiosMclClkDivVal" type="INTEGER" value="160"/>
+                    <d:ref name="EmiosCommonEcucPartitionRef" type="REFERENCE" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:ref>
+                    <d:lst name="EmiosMclMasterBus" type="MAP">
+                      <d:ctr name="EmiosMclMasterBus_EM1_BUS_A" 
+                             type="IDENTIFIABLE">
+                        <d:var name="EmiosMclMasterBusNumber" 
+                               type="ENUMERATION" value="EMIOS_CH_23"/>
+                        <d:var name="EmiosMclMasterBusModeType" 
+                               type="ENUMERATION" value="MCB_UP_COUNTER"/>
+                        <d:var name="EmiosMclDefaultPeriod" type="INTEGER" 
+                               value="65535"/>
+                        <d:var name="EmiosMclFirstOffsetValue" type="INTEGER" 
+                               value="0">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="EmiosMclMasterBusPrescaler" 
+                               type="ENUMERATION" value="DIV_1">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="EmiosMclMasterBusAltPrescaler" 
+                               type="ENUMERATION" value="DIV_1">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="EmiosMclChannelAllowDebugMode" 
+                               type="BOOLEAN" value="true">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="EmiosMclPwmExclusiveAccess" type="BOOLEAN" 
+                               value="false"/>
+                      </d:ctr>
+                    </d:lst>
+                  </d:ctr>
+                </d:lst>
                 <d:lst name="FlexioCommon" type="MAP"/>
               </d:ctr>
               <d:ctr name="CommonPublishedInformation" type="IDENTIFIABLE">

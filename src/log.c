@@ -78,7 +78,7 @@ void log_print_task(void* param)
 
 		if(count%100==0)
 		{
-			LOG_DEBUG("count %d", count);
+			//LOG_DEBUG("run time %ds", count/100);
 		}
 
 		vTaskDelay(10);

@@ -101,6 +101,14 @@
                       <d:var name="IsrHandler" type="FUNCTION-NAME" 
                              value="Adc0_Irq_handler"/>
                     </d:ctr>
+                    <d:ctr name="PlatformIsrConfig_3" type="IDENTIFIABLE">
+                      <d:var name="IsrName" type="ENUMERATION" 
+                             value="EMIOS1_5_IRQn"/>
+                      <d:var name="IsrEnabled" type="BOOLEAN" value="true"/>
+                      <d:var name="IsrPriority" type="INTEGER" value="2"/>
+                      <d:var name="IsrHandler" type="FUNCTION-NAME" 
+                             value="eMIOS1_5_Irq_handler"/>
+                    </d:ctr>
                   </d:lst>
                   <d:ref name="PlatformNvicEcucPartitionRef" type="REFERENCE" >
                     <a:a name="ENABLE" value="false"/>

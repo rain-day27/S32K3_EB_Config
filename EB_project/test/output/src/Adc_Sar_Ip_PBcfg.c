@@ -131,7 +131,7 @@ const Adc_Sar_Ip_ConfigType AdcSarIpConfig_0 =
 {
     ADC_SAR_IP_CONV_MODE_ONESHOT, /* ConvMode */
 #if (ADC_SAR_IP_SET_RESOLUTION == STD_ON)
-    ADC_SAR_IP_RESOLUTION_14, /* AdcResolution */
+    ADC_SAR_IP_RESOLUTION_12, /* AdcResolution */
     (boolean)FALSE, /* BypassResolution */
 #endif /* (ADC_SAR_IP_SET_RESOLUTION == STD_ON) */
     ADC_SAR_IP_CLK_HALF_BUS, /* ClkSelect */

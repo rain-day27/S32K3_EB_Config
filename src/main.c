@@ -51,6 +51,7 @@
 #include <string.h>
 
 
+uint8_t start_print[16] = "app_init_ok\n";
 StaticTask_t xIdleTaskTCB;
 StackType_t uxIdleTaskStack[ configMINIMAL_STACK_SIZE ];
 void vApplicationGetIdleTaskMemory( StaticTask_t **ppxIdleTaskTCBBuffer, StackType_t **ppxIdleTaskStackBuffer, uint32_t *pulIdleTaskStackSize )
@@ -61,7 +62,23 @@ void vApplicationGetIdleTaskMemory( StaticTask_t **ppxIdleTaskTCBBuffer, StackTy
     *pulIdleTaskStackSize = configMINIMAL_STACK_SIZE;
 }
 
-uint8_t start_print[16] = "app_init_ok\n";
+void mcu_goto_low_power(void)
+{
+    /* Initialize the clock tree and apply PLL as system clock */
+    Mcu_InitClock(McuClockSettingConfig_Standby);
+
+    /* Initialize the WAKE_UP Mode */
+    Icu_Init(NULL_PTR);
+    /* Enble callback but not used */
+    Icu_EnableEdgeDetection(IcuChannel_WKUP59_PA20);
+
+    /* Disable standby IO pad keeping */
+    IP_DCM_GPR->DCMRWF1 |= DCM_GPR_DCMRWF1_STANDBY_IO_CONFIG_MASK;
+
+    /* Initialize the Mcu Mode */
+    Mcu_SetMode(McuModeSettingConf_Standby);
+
+}
 
 void user_init(void)
 {
@@ -84,12 +101,12 @@ void Mcal_Init(void)
 	Mcu_Init(&Mcu_Config);
 
 	/* Initialize the clock tree and apply PLL as system clock */
-	Mcu_InitClock(McuClockSettingConfig_0);
+	Mcu_InitClock(McuClockSettingConfig_Running);
 	while(MCU_PLL_LOCKED != Mcu_GetPllStatus())	{}
 	Mcu_DistributePllClock();
 
 	/* Apply a mode configuration */
-	Mcu_SetMode(McuModeSettingConf_0);
+	Mcu_SetMode(McuModeSettingConf_Running);
 
 	Mcl_Init(NULL_PTR);
 

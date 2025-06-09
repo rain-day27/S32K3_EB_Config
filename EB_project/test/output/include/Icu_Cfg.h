@@ -121,7 +121,7 @@ extern "C"{
 #define ICU_PRECOMPILE_SUPPORT
 
 /** @brief Maximum number of ICU channels configured. */
-#define ICU_MAX_CHANNEL                 ((Icu_ChannelType)1U)
+#define ICU_MAX_CHANNEL                 ((Icu_ChannelType)2U)
 
 /**
 *   @brief  Switches the Development Error Detection and Notification on or off.
@@ -367,8 +367,10 @@ extern "C"{
 */
 #define ICU_CAPTURERGISTER_API      (STD_OFF)
 
-#define IcuChannel_0                     (IcuConf_IcuChannel_IcuChannel_0)
-#define IcuConf_IcuChannel_IcuChannel_0  ((Icu_ChannelType)0U)
+#define IcuChannel_EM1_CH2                     (IcuConf_IcuChannel_IcuChannel_EM1_CH2)
+#define IcuConf_IcuChannel_IcuChannel_EM1_CH2  ((Icu_ChannelType)0U)
+#define IcuChannel_WKUP59_PA20                     (IcuConf_IcuChannel_IcuChannel_WKUP59_PA20)
+#define IcuConf_IcuChannel_IcuChannel_WKUP59_PA20  ((Icu_ChannelType)1U)
 
 /**
 * @brief          Number of configured partitions.

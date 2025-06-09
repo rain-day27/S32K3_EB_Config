@@ -17,4 +17,7 @@ typedef enum __adc0_ch_e{
 void app_task(void* param);
 uint64_t get_sys_time(void);
 
+/* other file. */
+void mcu_goto_low_power(void);
+
 #endif /* APP_H_ */

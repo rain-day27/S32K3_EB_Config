@@ -94,8 +94,11 @@ extern "C"{
 
 #define WKPU_IP_64_CH_USED                (STD_ON)
 
-#define WKPU_ICU_SINGLE_INTERRUPT         (STD_OFF)
+#define WKPU_ICU_SINGLE_INTERRUPT         (STD_ON)
 
+/** @brief Macro used to export generated configuration. */
+#define WKPU_CONFIG_EXT \
+        WKPU_CONFIG_PB
 
 #endif /* WKPU_IP_USED */
 

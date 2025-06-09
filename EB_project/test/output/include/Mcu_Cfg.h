@@ -439,13 +439,13 @@ extern "C"{
 /**
 * @brief            Maximum number of MCU Clock configurations.
 */
-#define MCU_MAX_CLKCONFIGS   ((uint32)1U)
+#define MCU_MAX_CLKCONFIGS   ((uint32)2U)
 
 
 /**
 * @brief            Maximum number of MCU Mode configurations.
 */
-#define MCU_MAX_MODECONFIGS   ((uint32)1U)
+#define MCU_MAX_MODECONFIGS   ((uint32)2U)
 
 
 /**
@@ -624,9 +624,14 @@ extern "C"{
 */
 
 
-#define McuClockSettingConfig_0   ((Mcu_ClockType)0U)
+#define McuClockSettingConfig_Running   ((Mcu_ClockType)0U)
 
-#define McuConf_McuClockSettingConfig_McuClockSettingConfig_0   ((Mcu_ClockType)0U)
+#define McuConf_McuClockSettingConfig_McuClockSettingConfig_Running   ((Mcu_ClockType)0U)
+
+
+#define McuClockSettingConfig_Standby   ((Mcu_ClockType)1U)
+
+#define McuConf_McuClockSettingConfig_McuClockSettingConfig_Standby   ((Mcu_ClockType)1U)
 
 
 #endif
@@ -637,9 +642,14 @@ extern "C"{
 */
 
 
-#define McuModeSettingConf_0   ((Mcu_ModeType)0U)
+#define McuModeSettingConf_Running   ((Mcu_ModeType)0U)
 
-#define McuConf_McuModeSettingConf_McuModeSettingConf_0   ((Mcu_ModeType)0U)
+#define McuConf_McuModeSettingConf_McuModeSettingConf_Running   ((Mcu_ModeType)0U)
+
+
+#define McuModeSettingConf_Standby   ((Mcu_ModeType)1U)
+
+#define McuConf_McuModeSettingConf_McuModeSettingConf_Standby   ((Mcu_ModeType)1U)
 
 
 /**

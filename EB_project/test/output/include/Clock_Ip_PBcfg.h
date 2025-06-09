@@ -96,31 +96,37 @@ extern "C"{
 * @brief            Number of configured internal oscillators
 */
 #define CLOCK_IP_CONFIGURED_IRCOSCS_0_NO       (3U)
+#define CLOCK_IP_CONFIGURED_IRCOSCS_1_NO       (3U)
 
 /**
 * @brief            Number of configured external oscillators
 */
 #define CLOCK_IP_CONFIGURED_XOSCS_0_NO       (2U)
+#define CLOCK_IP_CONFIGURED_XOSCS_1_NO       (2U)
 
 /**
 * @brief            Number of configured pll devices
 */
 #define CLOCK_IP_CONFIGURED_PLLS_0_NO       (1U)
+#define CLOCK_IP_CONFIGURED_PLLS_1_NO       (1U)
 
 /**
 * @brief            Number of configured selectors
 */
 #define CLOCK_IP_CONFIGURED_SELECTORS_0_NO       (12U)
+#define CLOCK_IP_CONFIGURED_SELECTORS_1_NO       (12U)
 
 /**
 * @brief            Number of configured dividers
 */
 #define CLOCK_IP_CONFIGURED_DIVIDERS_0_NO       (20U)
+#define CLOCK_IP_CONFIGURED_DIVIDERS_1_NO       (20U)
 
 /**
 * @brief            Number of configured divider triggers
 */
 #define CLOCK_IP_CONFIGURED_DIVIDER_TRIGGERS_0_NO       (1U)
+#define CLOCK_IP_CONFIGURED_DIVIDER_TRIGGERS_1_NO       (1U)
 
 /**
 * @brief            Number of configured fractional dividers
@@ -130,6 +136,7 @@ extern "C"{
 * @brief            Number of configured external signals
 */
 #define CLOCK_IP_CONFIGURED_EXT_CLKS_0_NO       (2U)
+#define CLOCK_IP_CONFIGURED_EXT_CLKS_1_NO       (2U)
 
 /**
 * @brief            Number of configured pcfs
@@ -143,6 +150,7 @@ extern "C"{
 * @brief            Number of configured clock monitoring units
 */
 #define CLOCK_IP_CONFIGURED_CMUS_0_NO       (3U)
+#define CLOCK_IP_CONFIGURED_CMUS_1_NO       (3U)
 
 /*==================================================================================================
 *                                              ENUMS

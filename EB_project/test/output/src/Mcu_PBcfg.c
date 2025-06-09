@@ -154,11 +154,11 @@ const Mcu_ConfigType Mcu_Config =
     (Mcu_RamSectionType)0U,
 
     /* Number of Power Modes configurations. */
-    (Mcu_ModeType)1U,
+    (Mcu_ModeType)2U,
 
 #if (MCU_INIT_CLOCK == STD_ON)
     /* Number of Clock Setting configurations. */
-    (Mcu_ClockType)1U,
+    (Mcu_ClockType)2U,
 #endif /* (MCU_INIT_CLOCK == STD_ON) */
 
 #ifndef MCU_MAX_NORAMCONFIGS

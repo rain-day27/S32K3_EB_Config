@@ -121,8 +121,48 @@ extern void Icu_ReportWakeupAndOverflow(uint16 Channel, boolean bOverflow);
 /*==================================================================================================
  *                                       GLOBAL CONSTANTS
  *================================================================================================*/
+#define ICU_START_SEC_CONFIG_DATA_UNSPECIFIED
+#include "Icu_MemMap.h"
 
+/** @brief Variant: PB Default WKPU Configuration. */
+const Wkpu_Ip_ChannelConfigType Wkpu_Ip_ChannelConfig_PB[1U] = 
+{
+    /** @brief IcuWkpuChannels_WKUP59_PA20 */
+    {
+        /** @brief Wkpu HW Channel used by the Icu channel */
+        63U,
+        /** @brief Wkpu HW Channel Filter enable */
+        (boolean)FALSE,
+        /** @brief Wkpu HW Channel Pullup enable */
+        (boolean)TRUE,
+        /** @brief Wkpu Default Start Edge */
+        WKPU_IP_RISING_EDGE,
+        /** @brief Wkpu Channel Callback */
+        &Icu_ReportEvents,
+        /** @brief The notification functions */
+        NULL_PTR,
+        /** @brief Wkpu Callback Param1 */
+        1U
+    }
+};
 
+/** @brief Variant: PB WKPU IP Configuration. */
+const Wkpu_Ip_IrqConfigType Wkpu_Ip_Config_PB =
+{
+#if (defined (WKPU_IP_NMI_API) && (STD_ON == WKPU_IP_NMI_API))
+    /** @brief Number of Wkpu NMI channels in the Icu configuration */
+    (uint8)0U,
+    /** @brief Pointer to the array of Wkpu enabled Icu channel configurations */
+    NULL_PTR,
+#endif
+    /** @brief Number of Wkpu channels in the Icu configuration */
+    (uint8)1U,
+    /** @brief Pointer to the array of Wkpu enabled Icu channel configurations */
+    &Wkpu_Ip_ChannelConfig_PB
+};
+
+#define ICU_STOP_SEC_CONFIG_DATA_UNSPECIFIED
+#include "Icu_MemMap.h"
 
 #endif /* WKPU_IP_USED */
 /*==================================================================================================

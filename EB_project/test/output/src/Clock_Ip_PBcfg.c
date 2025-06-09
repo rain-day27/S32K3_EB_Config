@@ -873,7 +873,7 @@ static const Clock_Ip_DividerConfigType Clock_Ip_DividerConfigurations_1[CLOCK_I
 
     {
         CLKOUT_STANDBY_CLK,
-        1U,
+        2U,
         {
             0U,
         }

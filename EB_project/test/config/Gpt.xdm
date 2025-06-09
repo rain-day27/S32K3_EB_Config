@@ -841,7 +841,7 @@
                 <d:lst name="GptClockReferencePoint" type="MAP">
                   <d:ctr name="GptClockReferencePoint_PIT" type="IDENTIFIABLE">
                     <d:ref name="GptClockReference" type="REFERENCE" 
-                           value="ASPath:/Mcu/Mcu/McuModuleConfiguration/McuClockSettingConfig_0/PIT_CLK"/>
+                           value="ASPath:/Mcu/Mcu/McuModuleConfiguration/McuClockSettingConfig_Running/PIT_CLK"/>
                   </d:ctr>
                 </d:lst>
               </d:ctr>

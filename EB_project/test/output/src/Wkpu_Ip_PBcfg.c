@@ -132,9 +132,9 @@ const Wkpu_Ip_ChannelConfigType Wkpu_Ip_ChannelConfig_PB[1U] =
         /** @brief Wkpu HW Channel used by the Icu channel */
         63U,
         /** @brief Wkpu HW Channel Filter enable */
-        (boolean)FALSE,
-        /** @brief Wkpu HW Channel Pullup enable */
         (boolean)TRUE,
+        /** @brief Wkpu HW Channel Pullup enable */
+        (boolean)FALSE,
         /** @brief Wkpu Default Start Edge */
         WKPU_IP_RISING_EDGE,
         /** @brief Wkpu Channel Callback */

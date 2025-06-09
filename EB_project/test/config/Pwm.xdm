@@ -62,7 +62,7 @@
                       <a:a name="IMPORTER_INFO" value="@DEF"/>
                     </d:var>
                     <d:ref name="PwmMcuClockReferencePoint" type="REFERENCE" 
-                           value="ASPath:/Mcu/Mcu/McuModuleConfiguration/McuClockSettingConfig_0/eMIOS_0_CLK"/>
+                           value="ASPath:/Mcu/Mcu/McuModuleConfiguration/McuClockSettingConfig_Running/eMIOS_0_CLK"/>
                   </d:ctr>
                   <d:ctr name="PwmChannel_EM0_CH10" type="IDENTIFIABLE">
                     <d:var name="PwmChannelId" type="INTEGER" value="1">
@@ -99,7 +99,7 @@
                       <a:a name="IMPORTER_INFO" value="@DEF"/>
                     </d:var>
                     <d:ref name="PwmMcuClockReferencePoint" type="REFERENCE" 
-                           value="ASPath:/Mcu/Mcu/McuModuleConfiguration/McuClockSettingConfig_0/eMIOS_0_CLK"/>
+                           value="ASPath:/Mcu/Mcu/McuModuleConfiguration/McuClockSettingConfig_Running/eMIOS_0_CLK"/>
                   </d:ctr>
                   <d:ctr name="PwmChannel_EM0_CH6" type="IDENTIFIABLE">
                     <d:var name="PwmChannelId" type="INTEGER" value="2">
@@ -138,7 +138,7 @@
                       <a:a name="IMPORTER_INFO" value="@DEF"/>
                     </d:var>
                     <d:ref name="PwmMcuClockReferencePoint" type="REFERENCE" 
-                           value="ASPath:/Mcu/Mcu/McuModuleConfiguration/McuClockSettingConfig_0/eMIOS_0_CLK"/>
+                           value="ASPath:/Mcu/Mcu/McuModuleConfiguration/McuClockSettingConfig_Running/eMIOS_0_CLK"/>
                   </d:ctr>
                 </d:lst>
                 <d:lst name="PwmEtpu" type="MAP"/>

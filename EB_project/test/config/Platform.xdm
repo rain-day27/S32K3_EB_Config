@@ -83,7 +83,7 @@
                       <d:var name="IsrName" type="ENUMERATION" 
                              value="LPUART0_IRQn"/>
                       <d:var name="IsrEnabled" type="BOOLEAN" value="true"/>
-                      <d:var name="IsrPriority" type="INTEGER" value="1"/>
+                      <d:var name="IsrPriority" type="INTEGER" value="5"/>
                       <d:var name="IsrHandler" type="FUNCTION-NAME" 
                              value="Uart0_Irq_handler"/>
                     </d:ctr>
@@ -108,6 +108,17 @@
                       <d:var name="IsrPriority" type="INTEGER" value="2"/>
                       <d:var name="IsrHandler" type="FUNCTION-NAME" 
                              value="eMIOS1_5_Irq_handler"/>
+                    </d:ctr>
+                    <d:ctr name="PlatformIsrConfig_4" type="IDENTIFIABLE">
+                      <d:var name="IsrName" type="ENUMERATION" value="WKPU_IRQn"/>
+                      <d:var name="IsrEnabled" type="BOOLEAN" value="false">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="IsrPriority" type="INTEGER" value="0">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="IsrHandler" type="FUNCTION-NAME" 
+                             value="WKPU_EXT_IRQ_SINGLE_ISR"/>
                     </d:ctr>
                   </d:lst>
                   <d:ref name="PlatformNvicEcucPartitionRef" type="REFERENCE" >

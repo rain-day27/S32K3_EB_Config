@@ -75,7 +75,7 @@
                       </a:a>
                     </d:var>
                     <d:ref name="UartClockRef" type="REFERENCE" 
-                           value="ASPath:/Mcu/Mcu/McuModuleConfiguration/McuClockSettingConfig_0/UART0_CLK"/>
+                           value="ASPath:/Mcu/Mcu/McuModuleConfiguration/McuClockSettingConfig_Running/UART0_CLK"/>
                     <d:ref name="UartChannelEcucPartitionRef" type="REFERENCE" >
                       <a:a name="ENABLE" value="false"/>
                       <a:a name="IMPORTER_INFO" value="@DEF"/>

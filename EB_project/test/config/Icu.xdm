@@ -24,14 +24,14 @@
               <d:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION" 
                      value="VariantPreCompile"/>
               <d:ctr name="IcuConfigSet" type="IDENTIFIABLE">
-                <d:var name="IcuMaxChannel" type="INTEGER" value="1">
+                <d:var name="IcuMaxChannel" type="INTEGER" value="2">
                   <a:a name="IMPORTER_INFO">
                     <a:v>@CALC</a:v>
                     <a:v>@DEF</a:v>
                   </a:a>
                 </d:var>
                 <d:lst name="IcuChannel" type="MAP">
-                  <d:ctr name="IcuChannel_0" type="IDENTIFIABLE">
+                  <d:ctr name="IcuChannel_EM1_CH2" type="IDENTIFIABLE">
                     <d:var name="IcuChannelId" type="INTEGER" value="0">
                       <a:a name="IMPORTER_INFO">
                         <a:v>@DEF</a:v>
@@ -95,6 +95,75 @@
                       </d:ref>
                     </d:ctr>
                   </d:ctr>
+                  <d:ctr name="IcuChannel_WKUP59_PA20" type="IDENTIFIABLE">
+                    <d:var name="IcuChannelId" type="INTEGER" value="1">
+                      <a:a name="IMPORTER_INFO">
+                        <a:v>@DEF</a:v>
+                        <a:v>@CALC</a:v>
+                      </a:a>
+                    </d:var>
+                    <d:lst name="IcuChannelEcucPartitionRef"/>
+                    <d:ref name="IcuChannelRef" type="REFERENCE" 
+                           value="ASPath:/Icu/Icu/IcuConfigSet/IcuWkpu_0/IcuWkpuChannels_WKUP59_PA20"/>
+                    <d:var name="IcuDMAChannelEnable" type="BOOLEAN" 
+                           value="false">
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:ref name="IcuDMAChannelRef" type="REFERENCE" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:ref>
+                    <d:var name="IcuDefaultStartEdge" type="ENUMERATION" 
+                           value="ICU_RISING_EDGE">
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="IcuMeasurementMode" type="ENUMERATION" 
+                           value="ICU_MODE_SIGNAL_EDGE_DETECT">
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="IcuOverflowNotification" type="FUNCTION-NAME" 
+                           value="NULL_PTR">
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:var name="IcuWakeupCapability" type="BOOLEAN" 
+                           value="false">
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:ctr name="IcuSignalEdgeDetection" type="IDENTIFIABLE">
+                      <a:a name="ENABLE" value="true"/>
+                      <d:var name="IcuSignalNotification" type="FUNCTION-NAME" 
+                             value="NULL_PTR">
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                    </d:ctr>
+                    <d:ctr name="IcuSignalMeasurement" type="IDENTIFIABLE">
+                      <a:a name="ENABLE" value="false"/>
+                      <d:var name="IcuSignalMeasurementProperty" 
+                             type="ENUMERATION" value="ICU_DUTY_CYCLE">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                    </d:ctr>
+                    <d:ctr name="IcuTimestampMeasurement" type="IDENTIFIABLE">
+                      <a:a name="ENABLE" value="false"/>
+                      <d:var name="IcuTimestampMeasurementProperty" 
+                             type="ENUMERATION" value="ICU_LINEAR_BUFFER">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="IcuTimestampNotification" 
+                             type="FUNCTION-NAME" value="NULL_PTR">
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                    </d:ctr>
+                    <d:ctr name="IcuWakeup" type="IDENTIFIABLE">
+                      <a:a name="ENABLE" value="false"/>
+                      <d:ref name="IcuChannelWakeupInfo" type="REFERENCE" >
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:ref>
+                    </d:ctr>
+                  </d:ctr>
                 </d:lst>
                 <d:lst name="IcueMios" type="MAP">
                   <d:ctr name="IcueMios_1" type="IDENTIFIABLE">
@@ -139,13 +208,32 @@
                   </d:ctr>
                 </d:lst>
                 <d:lst name="IcuSiul2" type="MAP"/>
-                <d:lst name="IcuWkpu" type="MAP"/>
+                <d:lst name="IcuWkpu" type="MAP">
+                  <d:ctr name="IcuWkpu_0" type="IDENTIFIABLE">
+                    <d:lst name="IcuWkpuChannels" type="MAP">
+                      <d:ctr name="IcuWkpuChannels_WKUP59_PA20" 
+                             type="IDENTIFIABLE">
+                        <d:var name="IcuWkpuChannel" type="INTEGER" value="63"/>
+                        <d:var name="Icu_EXT_ISR_WIFERDigitalFilter" 
+                               type="BOOLEAN" value="true"/>
+                        <d:var name="IcuWKPU_ISR_WIPUER" type="BOOLEAN" 
+                               value="false"/>
+                      </d:ctr>
+                    </d:lst>
+                    <d:lst name="IcuWkpuNMIConfiguration" type="MAP"/>
+                  </d:ctr>
+                </d:lst>
                 <d:lst name="IcuLpCmp" type="MAP"/>
                 <d:lst name="IcuHwInterruptConfigList" type="MAP">
                   <d:ctr name="IcuHwInterruptConfigList_EM1_CH2" 
                          type="IDENTIFIABLE">
                     <d:var name="IcuIsrHwId" type="ENUMERATION" 
                            value="EMIOS_1_CH_2"/>
+                  </d:ctr>
+                  <d:ctr name="IcuHwInterruptConfigList_WKUP59_PA20" 
+                         type="IDENTIFIABLE">
+                    <d:var name="IcuIsrHwId" type="ENUMERATION" 
+                           value="WKPU_CH_63"/>
                   </d:ctr>
                 </d:lst>
               </d:ctr>

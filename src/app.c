@@ -22,7 +22,6 @@
 Std_ReturnType adc0_group0_ret = E_OK;
 Adc_ValueGroupType adc0_group0_result[e_adc0_ch_max] = {0};
 Icu_DutyCycleType DutyCycle = {0,0};
-extern uint8_t wake_falg;
 
 /* 1s flash once. */
 void board_break_led(void)
@@ -108,7 +107,7 @@ void adc_data_updata(void)
 void icu_ch2_duty_mesure(void)
 {
 	Icu_GetDutyCycleValues(IcuChannel_EM1_CH2, &DutyCycle);
-	APP_DEBUG("[ICU] active = %d prior = %d, wake_falg %d)", DutyCycle.ActiveTime, DutyCycle.PeriodTime, wake_falg);
+	APP_DEBUG("[ICU] active = %d prior = %d)", DutyCycle.ActiveTime, DutyCycle.PeriodTime);
 }
 
 void user_adc_init(void)
@@ -132,7 +131,6 @@ void app_task(void* param)
 		{
 			adc_data_updata();
 			icu_ch2_duty_mesure();
-			APP_DEBUG("wake_falg %d)", wake_falg);
 		}
 
 		if(app_count > 20 * 100)	//running 20s goto standby

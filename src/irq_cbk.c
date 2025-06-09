@@ -60,11 +60,5 @@ void eMIOS1_5_Irq_handler(void)
 	EMIOS1_5_IRQ();
 }
 
-uint8_t wake_falg = 0;
-void WakeUp_handler(void)
-{
-	wake_falg++;
-	WKPU_EXT_IRQ_SINGLE_ISR();
-}
 
 

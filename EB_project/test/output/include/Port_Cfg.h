@@ -2717,7 +2717,7 @@ PORT_CONFIG_PB
 #define PortConf_PortPin_eMIOS0_CH6_PC10  6
 #define PortConf_PortPin_eMIOS0_CH10_PC14  7
 #define PortConf_PortPin_eMIOS1_CH2_PA12  8
-#define PortConf_PortPin_WKUP59_PA20  9
+#define PortConf_PortPin_WakeUp_PA20  9
 
 /**
 * @brief The maximum number of configured pins

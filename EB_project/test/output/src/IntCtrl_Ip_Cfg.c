@@ -75,7 +75,7 @@ static const IntCtrl_Ip_IrqConfigType aIrqConfiguration[] = {
     {PIT0_IRQn, (boolean)TRUE, 15U, &Pit0_Irq_handler},
     {ADC0_IRQn, (boolean)TRUE, 4U, &Adc0_Irq_handler},
     {EMIOS1_5_IRQn, (boolean)TRUE, 2U, &eMIOS1_5_Irq_handler},
-    {WKPU_IRQn, (boolean)TRUE, 1U, &WakeUp_handler},
+    {WKPU_IRQn, (boolean)FALSE, 0U, &WKPU_EXT_IRQ_SINGLE_ISR},
 };
 
 /* Configuration structure for interrupt controller */

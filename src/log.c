@@ -5,17 +5,10 @@
  *      Author: 周大王
  */
 
-#include "CDD_Uart.h"
-#include "FreeRTOS.h"
-#include "task.h"
-
+#include "main.h"
 #include "fifo.h"
 #include "log.h"
 #include "app.h"
-
-#include <string.h>
-#include <stdio.h>
-#include <stdarg.h>
 
 #define UART0_CHANNL 0
 #define	LOG_BUFF_SIZE 512
@@ -36,7 +29,7 @@ void app_debug(const char* str, uint16_t len)
 void app_log(log_level_e level, const char* tag, const char* fmt, ...)
 {
     static const char* level_str[] = {"DEBUG", "INFO", "WARN", "ERROR"};
-    char log_buffer[128];  // 注意内存占用，避免过大
+    char log_buffer[256];  // 注意内存占用，避免过大
     int len = 0;
 
     // 加入等级和模块标识

@@ -5,23 +5,19 @@
  *      Author: 周大王
  */
 
-#include "FreeRTOS.h"
-#include "task.h"
-#include "Dio.h"
-#include "Adc.h"
-#include "Pwm.h"
-#include "Icu.h"
-
+#include "main.h"
 #include "fifo.h"
 #include "app.h"
 #include "log.h"
 
 #define APP_DEBUG(fmt,...)	app_log(e_log_debug, "APP", "[%lu]"fmt NEW_LINE, (uint32_t)get_sys_time(), ##__VA_ARGS__);
 #define OWM_MAX_DUTY		0x8fff
+#define I2C_SLAVE_ADDRESS	(uint8_t)0x55	//7 bit address
 
 Std_ReturnType adc0_group0_ret = E_OK;
 Adc_ValueGroupType adc0_group0_result[e_adc0_ch_max] = {0};
 Icu_DutyCycleType DutyCycle = {0,0};
+
 
 /* 1s flash once. */
 void board_break_led(void)
@@ -110,6 +106,24 @@ void icu_ch2_duty_mesure(void)
 	APP_DEBUG("[ICU] active = %d prior = %d)", DutyCycle.ActiveTime, DutyCycle.PeriodTime);
 }
 
+void send_data_to_i2c(uint8_t* data,uint8_t size)
+{
+	uint8_t ret = false;
+	I2c_RequestType I2c_Request = {0};
+	I2c_Request.BitsSlaveAddressSize = false;
+	I2c_Request.BufferSize = size;
+	I2c_Request.DataBuffer = data;
+	I2c_Request.DataDirection = I2C_SEND_DATA;
+	I2c_Request.ExpectNack = true;
+	I2c_Request.RepeatedStart = false;
+	I2c_Request.SlaveAddress = I2C_SLAVE_ADDRESS;
+
+	ret = I2c_SyncTransmit(I2cChannel_I2C1, &I2c_Request);
+	//ret = I2c_AsyncTransmit(I2cChannel_I2C1, &I2c_Request);
+
+	APP_DEBUG("[I2C] ret = %d", ret);
+}
+
 void user_adc_init(void)
 {
 	Adc_SetupResultBuffer(AdcGroup_0, adc0_group0_result);
@@ -120,6 +134,7 @@ void app_task(void* param)
 {
 	(void)param;
 	uint32_t app_count = 0;
+	uint8_t user_i2c_buff[4] = {0xff,0xff,0xff,0xff};
 
 	user_adc_init();
 	Icu_StartSignalMeasurement(IcuChannel_EM1_CH2);
@@ -131,13 +146,14 @@ void app_task(void* param)
 		{
 			adc_data_updata();
 			icu_ch2_duty_mesure();
+			send_data_to_i2c(user_i2c_buff, sizeof(user_i2c_buff));
 		}
 
 		if(app_count > 20 * 100)	//running 20s goto standby
 		{
-			APP_DEBUG("mcu goto standby %d)", app_count);
+			//APP_DEBUG("mcu goto standby %d)", app_count);
 			vTaskDelay(10);
-			mcu_goto_low_power();
+			//mcu_goto_low_power();
 		}
 
 		app_count++;

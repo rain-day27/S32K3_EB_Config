@@ -111,14 +111,20 @@
                     </d:ctr>
                     <d:ctr name="PlatformIsrConfig_4" type="IDENTIFIABLE">
                       <d:var name="IsrName" type="ENUMERATION" value="WKPU_IRQn"/>
-                      <d:var name="IsrEnabled" type="BOOLEAN" value="false">
-                        <a:a name="IMPORTER_INFO" value="@DEF"/>
-                      </d:var>
+                      <d:var name="IsrEnabled" type="BOOLEAN" value="true"/>
                       <d:var name="IsrPriority" type="INTEGER" value="0">
                         <a:a name="IMPORTER_INFO" value="@DEF"/>
                       </d:var>
                       <d:var name="IsrHandler" type="FUNCTION-NAME" 
                              value="WKPU_EXT_IRQ_SINGLE_ISR"/>
+                    </d:ctr>
+                    <d:ctr name="PlatformIsrConfig_5" type="IDENTIFIABLE">
+                      <d:var name="IsrName" type="ENUMERATION" 
+                             value="LPI2C1_IRQn"/>
+                      <d:var name="IsrEnabled" type="BOOLEAN" value="true"/>
+                      <d:var name="IsrPriority" type="INTEGER" value="6"/>
+                      <d:var name="IsrHandler" type="FUNCTION-NAME" 
+                             value="LPI2C1_Master_Slave_IRQHandler"/>
                     </d:ctr>
                   </d:lst>
                   <d:ref name="PlatformNvicEcucPartitionRef" type="REFERENCE" >

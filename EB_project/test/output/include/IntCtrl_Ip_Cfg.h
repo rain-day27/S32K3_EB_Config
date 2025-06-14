@@ -86,6 +86,7 @@ extern void Pit0_Irq_handler(void);
 extern void Adc0_Irq_handler(void);
 extern void eMIOS1_5_Irq_handler(void);
 extern void WKPU_EXT_IRQ_SINGLE_ISR(void);
+extern void LPI2C1_Master_Slave_IRQHandler(void);
 
 #ifdef  PLATFORM_IP_ENABLE_INT_CTRL
 #if  (PLATFORM_IP_ENABLE_INT_CTRL == STD_ON)

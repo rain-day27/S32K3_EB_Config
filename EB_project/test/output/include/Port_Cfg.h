@@ -2718,16 +2718,18 @@ PORT_CONFIG_PB
 #define PortConf_PortPin_eMIOS0_CH10_PC14  7
 #define PortConf_PortPin_eMIOS1_CH2_PA12  8
 #define PortConf_PortPin_WakeUp_PA20  9
+#define PortConf_PortPin_PortPin_IIC1_SCL_PC28  10
+#define PortConf_PortPin_PortPin_IIC1_SDA_PC29  11
 
 /**
 * @brief The maximum number of configured pins
 */
-#define PORT_MAX_CONFIGURED_PADS_U16   ((uint16)10)
+#define PORT_MAX_CONFIGURED_PADS_U16   ((uint16)12)
 
 /**
 * @brief Number of UnUsed pin array
 */
-#define PORT_MAX_UNUSED_PADS_U16    (204U)
+#define PORT_MAX_UNUSED_PADS_U16    (202U)
 
 /**
 * @brief Port driver Post-build configuration switch

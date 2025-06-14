@@ -27,29 +27,10 @@
  * main implementation: use this 'C' sample to create your own application
  *
  */
-#include "S32K314.h"
-#include "Mcu.h"
-#include "Port.h"
-#include "Dio_Cfg.h"
-#include "Dio.h"
-#include "Gpt.h"
-#include "Adc.h"
-#include "Pwm.h"
-#include "Mcl.h"
-#include "Icu.h"
-#include "CDD_Uart.h"
-#include "Platform.h"
 
-#include "FreeRTOS.h"
-#include "task.h"
-#include "queue.h"
-
+#include "main.h"
 #include "log.h"
 #include "app.h"
-
-#include <stdio.h>
-#include <string.h>
-
 
 uint8_t start_print[16] = "app_init_ok\n";
 StaticTask_t xIdleTaskTCB;
@@ -62,11 +43,48 @@ void vApplicationGetIdleTaskMemory( StaticTask_t **ppxIdleTaskTCBBuffer, StackTy
     *pulIdleTaskStackSize = configMINIMAL_STACK_SIZE;
 }
 
+void Wkup_Config(void)
+{
+    #ifdef FASTWKUP_STANDBY_RAM
+        FastWkup_StandbyRAMECCInit();
+    #endif
+
+    /* Any reset occurred during standby will cause peripherals registers reset */
+    //if(Mcu_GetResetReason() < MCU_WAKE_UP_REASON )
+    if(1)
+    {
+    #if(WKUP_USE_FAST)
+        IP_DCM_GPR->DCMRWF5 = (uint32_t)VectorTable |  /* Vector table address for Fast Standby Exit */
+                              0x00000001UL;            /* Enable Fast Standby Exit */
+        IP_PMC->CONFIG |= PMC_CONFIG_FAST_RECOVERY_ENABLE;/*Enable capacitor fast charging after standby exit*/
+        IP_DCM_GPR->DCMRWF2 |= DCM_GPR_DCMRWF2_SIRC_TRIM_BYP_STDBY_EXT_MASK |  /* Bypass SIRC trimming on standby exit */
+                               DCM_GPR_DCMRWF2_PMC_TRIM_RGM_DCF_BYP_STDBY_EXT_MASK |  /* bypass the PMC trimming and RGM DCF loading on standby exit */
+                               DCM_GPR_DCMRWF2_FIRC_TRIM_BYP_STDBY_EXT_MASK |  /* Bypass FIRC trimming on standby exit */
+                               DCM_GPR_DCMRWF2_DCM_SCAN_BYP_STDBY_EXT_MASK;    /* bypass the DCM scanning on standby exit */
+    #else
+        IP_DCM_GPR->DCMRWF5 = 0x00000000UL;            /* Enable Normal Standby Exit */
+    #endif
+    }
+
+    /* Initialize the Icu driver */
+    Icu_Init(NULL_PTR);
+    Icu_EnableEdgeDetection(IcuChannel_WKUP59_PA20);
+
+    /* wkup edge detection */
+    // Icu_EnableEdgeDetection(IcuWkpuChannel_LPCM1);
+    // Icu_EnableEdgeDetection(IcuWkpuChannel_PTC20);
+    // Icu_EnableEdgeDetection(IcuWkpuChannel_PTC11_CAN5_Rx_Wkup);
+    // Icu_EnableEdgeDetection(IcuWkpuChannel_PTA6_CAN0_Rx_Wkup);
+
+    /* Enable pad keeping in STANDBY IO configurations */
+    IP_DCM_GPR->DCMRWF1 &= ~DCM_GPR_DCMRWF1_STANDBY_IO_CONFIG_MASK;
+}
+
 void mcu_goto_low_power(void)
 {
     /* Initialize the clock tree and apply PLL as system clock */
     Mcu_InitClock(McuClockSettingConfig_Standby);
-
+#if 0
     /* Initialize the WAKE_UP Mode */
     Icu_Init(NULL_PTR);
     /* Enble callback but not used */
@@ -74,7 +92,9 @@ void mcu_goto_low_power(void)
 
     /* Disable standby IO pad keeping */
     IP_DCM_GPR->DCMRWF1 |= DCM_GPR_DCMRWF1_STANDBY_IO_CONFIG_MASK;
-
+#else
+    Wkup_Config();
+#endif
     /* Initialize the Mcu Mode */
     Mcu_SetMode(McuModeSettingConf_Standby);
 
@@ -110,6 +130,9 @@ void Mcal_Init(void)
 
 	Mcl_Init(NULL_PTR);
 
+	/* Disable standby IO pad keeping */
+	IP_DCM_GPR->DCMRWF1 |= DCM_GPR_DCMRWF1_STANDBY_IO_CONFIG_MASK;
+
 	/* Initialize all pins using the Port driver */
 	Port_Init(&Port_Config);
 
@@ -125,6 +148,8 @@ void Mcal_Init(void)
 	/* Initializes an UART driver*/
 	Uart_Init(&Uart_xConfig);
 
+	I2c_Init(NULL_PTR);
+
 	Pwm_Init(NULL_PTR);
 
 	Icu_Init(NULL_PTR);
@@ -137,7 +162,7 @@ int main(void)
     user_init();
 
     xTaskCreate((TaskFunction_t)log_print_task, "LOG START", 256, NULL, 1, NULL);
-    xTaskCreate((TaskFunction_t)app_task, "APP START", 256, NULL, 1, NULL);
+    xTaskCreate((TaskFunction_t)app_task, "APP START", 512, NULL, 1, NULL);
 
     vTaskStartScheduler();
 

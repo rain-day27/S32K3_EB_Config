@@ -282,8 +282,8 @@
       </d:ctr>
       <d:ctr name="Spi">
         <d:var name="ModuleId" value="Spi_TS_T40D34M50I0R0"/>
-        <d:var name="Enabled" value="FALSE"/>
-        <d:var name="Generate" value="FALSE"/>
+        <d:var name="Enabled" value="TRUE"/>
+        <d:var name="Generate" value="TRUE"/>
         <d:var name="LoadExistingConfigurationFile" value="FALSE"/>
         <d:var name="SoftwareVersion" value="5.0.0 D2408"/>
         <d:var name="ConfigurationFileURL" value="config\Spi.xdm"/>

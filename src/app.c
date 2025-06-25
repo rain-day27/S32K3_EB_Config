@@ -16,9 +16,14 @@
 
 Std_ReturnType adc0_group0_ret = E_OK;
 Adc_ValueGroupType adc0_group0_result[e_adc0_ch_max] = {0};
+
 Icu_DutyCycleType DutyCycle = {0,0};
+
 uint8_t user_i2c_rx_buff[9] = {0};
 uint8_t user_i2c_tx_buff[9] = {0x00,0x07,0x06,0x05,0x04,0x03,0x02,0x01,0x00};
+
+uint8_t spi_tx_buff[2][128] = {{0x12, 0x23, 0x34, 0x45}, {0x56, 0x67, 0x78, 0x89}};
+uint8_t spi_rx_buff[128] = {0};
 
 
 /* 1s flash once. */
@@ -177,14 +182,22 @@ void user_adc_init(void)
 	Adc_SetupResultBuffer(AdcGroup_0, adc0_group0_result);
 	Adc_StartGroupConversion(AdcGroup_0);
 }
+void user_app_init(void)
+{
+	user_adc_init();
+	Icu_StartSignalMeasurement(IcuChannel_EM1_CH2);
+
+	/* Set up external buffer to transmission and reception */
+	Spi_SetupEB(SpiConf_SpiChannel_SpiChannel_0, spi_tx_buff[0], spi_rx_buff, 4);
+	Spi_SetupEB(SpiConf_SpiChannel_SpiChannel_1, spi_tx_buff[1], spi_rx_buff, 4);
+}
 
 void app_task(void* param)
 {
 	(void)param;
 	uint32_t app_count = 0;
 
-	user_adc_init();
-	Icu_StartSignalMeasurement(IcuChannel_EM1_CH2);
+	user_app_init();
 
 	while(1)
 	{
@@ -193,7 +206,8 @@ void app_task(void* param)
 		{
 			adc_data_updata();
 			icu_ch2_duty_mesure();
-			read_data_from_eep();
+			Spi_SyncTransmit(SpiConf_SpiSequence_SpiSequence_0);
+			//read_data_from_eep();
 		}
 
 		if(app_count > 20 * 100)	//running 20s goto standby

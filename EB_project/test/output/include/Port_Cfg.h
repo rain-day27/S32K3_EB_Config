@@ -2720,16 +2720,21 @@ PORT_CONFIG_PB
 #define PortConf_PortPin_WakeUp_PA20  9
 #define PortConf_PortPin_PortPin_IIC1_SCL_PC28  10
 #define PortConf_PortPin_PortPin_IIC1_SDA_PC29  11
+#define PortConf_PortPin_PortPin_SPI0_MISO_PE0  12
+#define PortConf_PortPin_PortPin_SPI0_SCK_PE1  13
+#define PortConf_PortPin_PortPin_SPI0_MOSI_PE2  14
+#define PortConf_PortPin_PortPin_SPI0_CS0_PE4  15
+#define PortConf_PortPin_PortPin_SPI0_CS2_PE6  16
 
 /**
 * @brief The maximum number of configured pins
 */
-#define PORT_MAX_CONFIGURED_PADS_U16   ((uint16)12)
+#define PORT_MAX_CONFIGURED_PADS_U16   ((uint16)17)
 
 /**
 * @brief Number of UnUsed pin array
 */
-#define PORT_MAX_UNUSED_PADS_U16    (202U)
+#define PORT_MAX_UNUSED_PADS_U16    (197U)
 
 /**
 * @brief Port driver Post-build configuration switch

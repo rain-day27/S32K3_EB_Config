@@ -18,6 +18,7 @@
 #include "Pwm.h"
 #include "Mcl.h"
 #include "Icu.h"
+#include "Spi.h"
 #include "CDD_Uart.h"
 #include "CDD_I2c.h"
 #include "Platform.h"

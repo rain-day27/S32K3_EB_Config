@@ -14,6 +14,9 @@ typedef enum __adc0_ch_e{
 	e_adc0_ch_max
 }adc0_ch_e;
 
+extern uint8_t spi_tx_buff[2][128];
+extern uint8_t spi_rx_buff[128];
+
 void app_task(void* param);
 uint64_t get_sys_time(void);
 

@@ -152,6 +152,8 @@ void Mcal_Init(void)
 
 	Pwm_Init(NULL_PTR);
 
+	Spi_Init(NULL_PTR);
+
 	Icu_Init(NULL_PTR);
 }
 

@@ -26,13 +26,6 @@ void Uart0_Irq_handler(void)
     Lpuart_Uart_Ip_IrqHandler(0U);
 }
 
-void uart0_event_cbk(uint8 Channel, Uart_EventType Event)
-{
-	(void)Channel;
-	(void)Event;
-	return ;
-}
-
 void Pit0_Irq_handler(void)
 {
 	PIT_0_ISR();

@@ -230,7 +230,7 @@ const Siul2_Port_Ip_PinSettingsConfig g_pin_mux_InitConfigArr[NUM_OF_CONFIGURED_
         .pinPortIdx                  = 2,
         .mux                         = PORT_MUX_AS_GPIO,
         .safeMode                    = PORT_SAFE_MODE_DISABLED,
-        .pullConfig                  = PORT_INTERNAL_PULL_NOT_ENABLED,
+        .pullConfig                  = PORT_INTERNAL_PULL_UP_ENABLED,
         .driveStrength               = PORT_DRIVE_STRENTGTH_NOT_AVAILABLE,
         .inputFilter                 = PORT_INPUT_FILTER_NOT_AVAILABLE,
         .pullKeep                    = PORT_PULL_KEEP_DISABLED,

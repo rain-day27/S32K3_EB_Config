@@ -204,8 +204,8 @@ void app_task(void* param)
 		board_break_led();
 		if(app_count % 100 == 0)	//1s
 		{
-			adc_data_updata();
-			icu_ch2_duty_mesure();
+			//adc_data_updata();
+			//icu_ch2_duty_mesure();
 			Spi_SyncTransmit(SpiConf_SpiSequence_SpiSequence_0);
 			//read_data_from_eep();
 		}
@@ -213,7 +213,7 @@ void app_task(void* param)
 		if(app_count > 20 * 100)	//running 20s goto standby
 		{
 			//APP_DEBUG("mcu goto standby %d)", app_count);
-			vTaskDelay(10);
+			//vTaskDelay(10);
 			//mcu_goto_low_power();
 		}
 

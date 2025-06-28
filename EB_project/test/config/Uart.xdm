@@ -56,7 +56,7 @@
                 </d:var>
                 <d:var name="UartCallbackCapability" type="BOOLEAN" value="true"/>
                 <d:var name="UartCallback" type="FUNCTION-NAME" 
-                       value="uart0_event_cbk">
+                       value="Uart_TxRxCallback">
                   <a:a name="ENABLE" value="true"/>
                 </d:var>
                 <d:lst name="UartEcucPartitionRef"/>
@@ -133,9 +133,7 @@
                         <a:a name="IMPORTER_INFO" value="@DEF"/>
                       </d:var>
                       <d:var name="UartTimeoutEnable" type="BOOLEAN" 
-                             value="false">
-                        <a:a name="IMPORTER_INFO" value="@DEF"/>
-                      </d:var>
+                             value="true"/>
                     </d:ctr>
                     <d:ctr name="FlexioModuleConfiguration" type="IDENTIFIABLE">
                       <d:ref name="UartHwChannelRef" type="REFERENCE" >

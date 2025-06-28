@@ -11,20 +11,74 @@
 #include "app.h"
 
 #define UART0_CHANNL 0
-#define	LOG_BUFF_SIZE 512
+#define	LOG_TX_BUFF_SIZE 512
+#define	LOG_RX_BUFF_SIZE 128
 
 #define LOG_DEBUG(fmt,...)	app_log(e_log_debug, "LOG", "[%lu]"fmt NEW_LINE, (uint32_t)get_sys_time(), ##__VA_ARGS__);
 
-uint8_t log_tx_buff[LOG_BUFF_SIZE] = {0};
-uint8_t log2uart_buff[LOG_BUFF_SIZE] = {0};
-fifo_t log_fifo;
+fifo_t log_tx_fifo;
+uint8_t log_tx_buff[LOG_TX_BUFF_SIZE] = {0};
+uint8_t log2uart_buff[LOG_TX_BUFF_SIZE] = {0};	//tx
+uint8_t uart2log_buff[LOG_RX_BUFF_SIZE] = {0};	//rx
+uint8_t uart0_rx_done_flag = false;
+uint32_t err_flag = 0;
 
+
+void Uart_TxRxCallback(uint8 Channel, Uart_EventType Event)
+{
+	(void)Channel;
+	//uint32_t temp_val;
+	//Uart_StatusType err_flag = UART_STATUS_NO_ERROR;
+
+	switch(Channel)
+	{
+	case 0:	//UART channal1
+		if (Event == UART_EVENT_RX_FULL)
+		{
+			uart0_rx_done_flag = true;
+			Uart_AsyncReceive(UART0_CHANNL, uart2log_buff, LOG_RX_BUFF_SIZE);
+		}
+		else if (Event == UART_EVENT_END_TRANSFER)
+		{
+
+		}
+		else if (Event == UART_EVENT_ERROR)
+		{
+			//err_flag = Uart_GetStatus(UART0_CHANNL, &temp_val, UART_RECEIVE);
+
+			IP_LPUART_0->STAT &= ~(0xf<<16);
+			Uart_AsyncReceive(UART0_CHANNL, uart2log_buff, LOG_RX_BUFF_SIZE);
+		}
+		else if (Event == UART_EVENT_IDLE_STATE)
+		{
+			uart0_rx_done_flag = true;
+			Uart_AsyncReceive(UART0_CHANNL, uart2log_buff, LOG_RX_BUFF_SIZE);
+		}
+		break;
+
+	default :
+		break;
+	}
+}
+
+void uart0_rx_handle(void)
+{
+	if (uart0_rx_done_flag)
+	{
+		uart0_rx_done_flag = 0;
+
+	    Uart_AsyncSend(UART0_CHANNL, uart2log_buff, strlen((char*)uart2log_buff));
+
+	    // 继续接收下一批数据
+	    Uart_AsyncReceive(UART0_CHANNL, uart2log_buff, LOG_RX_BUFF_SIZE);
+	}
+
+}
 
 void app_debug(const char* str, uint16_t len)
 {
-	fifo_write(&log_fifo, str, len);
+	fifo_write(&log_tx_fifo, str, len);
 }
-
 
 void app_log(log_level_e level, const char* tag, const char* fmt, ...)
 {
@@ -50,7 +104,7 @@ void app_log(log_level_e level, const char* tag, const char* fmt, ...)
 
 void log_print_init(void)
 {
-	fifo_init(&log_fifo, log_tx_buff, sizeof(log_tx_buff));
+	fifo_init(&log_tx_fifo, log_tx_buff, sizeof(log_tx_buff));
 }
 
 void log_print_task(void* param)
@@ -58,20 +112,22 @@ void log_print_task(void* param)
 	(void)param;
 	uint32_t count = 0;
 	uint16_t print_count = 0;
+	Uart_AsyncReceive(UART0_CHANNL, uart2log_buff, LOG_RX_BUFF_SIZE);
 
 	while(1)
 	{
 		count++;
-		print_count = fifo_get_count(&log_fifo);
+		print_count = fifo_get_count(&log_tx_fifo);
 
-		if(fifo_read(&log_fifo, log2uart_buff, print_count))
+		if(fifo_read(&log_tx_fifo, log2uart_buff, print_count))
 		{
 			Uart_AsyncSend(UART0_CHANNL, log2uart_buff, print_count);
 		}
 
-		if(count%100==0)
+		if(count%100==0)	//1000ms
 		{
 			//LOG_DEBUG("run time %ds", count/100);
+			uart0_rx_handle();
 		}
 
 		vTaskDelay(10);

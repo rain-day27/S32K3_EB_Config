@@ -103,11 +103,11 @@ extern "C"{
 
 
 /* @brief Support for Uart Timeout Interrupt. If this parameter has been configured to TRUE, the Uart driver will enable Timeout Interrupt. */
-#define LPUART_UART_IP_ENABLE_TIMEOUT_INTERRUPT  (STD_OFF)
+#define LPUART_UART_IP_ENABLE_TIMEOUT_INTERRUPT  (STD_ON)
 
 #if (STD_ON == LPUART_UART_IP_ENABLE_TIMEOUT_INTERRUPT)
     /* @brief Array of instances that have timeout interrupt enabled. */
-    #define LPUART_UART_IP_ENABLE_TIMEOUT_INTERRUPT_PER_INSTANCE  {(boolean) FALSE, (boolean) FALSE,(boolean) FALSE,(boolean) FALSE,(boolean) FALSE,(boolean) FALSE,(boolean) FALSE,(boolean) FALSE,(boolean) FALSE,(boolean) FALSE,(boolean) FALSE,(boolean) FALSE,(boolean) FALSE,(boolean) FALSE,(boolean) FALSE,(boolean) FALSE }
+    #define LPUART_UART_IP_ENABLE_TIMEOUT_INTERRUPT_PER_INSTANCE  {(boolean) TRUE, (boolean) FALSE,(boolean) FALSE,(boolean) FALSE,(boolean) FALSE,(boolean) FALSE,(boolean) FALSE,(boolean) FALSE,(boolean) FALSE,(boolean) FALSE,(boolean) FALSE,(boolean) FALSE,(boolean) FALSE,(boolean) FALSE,(boolean) FALSE,(boolean) FALSE }
 #endif
 
 /* @brief Support for Internal Loopback. If this parameter has been configured to TRUE, the Uart driver will be executed in Loopback mode. */

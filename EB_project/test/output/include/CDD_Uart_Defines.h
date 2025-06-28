@@ -96,7 +96,7 @@ extern "C"{
 #define UART_HAS_DMA_ENABLED            (STD_OFF)
 
 /* @brief Uart has timeout interrupt enable. */
-#define UART_HAS_TIMEOUT_INTERRUPT_ENABLED            (STD_OFF)
+#define UART_HAS_TIMEOUT_INTERRUPT_ENABLED            (STD_ON)
 
 /* @brief Number of available hardware instances */
 #define UART_NUMBER_OF_INSTANCES             (24U)

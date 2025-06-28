@@ -1796,6 +1796,17 @@
                         <d:var name="McuClockFrequencySelect" 
                                type="ENUMERATION" value="AIPS_SLOW_CLK"/>
                       </d:ctr>
+                      <d:ctr name="SPI0_CLK" type="IDENTIFIABLE">
+                        <d:var name="McuClockReferencePointFrequency" 
+                               type="FLOAT" value="8.0E7">
+                          <a:a name="IMPORTER_INFO">
+                            <a:v>@CALC</a:v>
+                            <a:v>@DEF</a:v>
+                          </a:a>
+                        </d:var>
+                        <d:var name="McuClockFrequencySelect" 
+                               type="ENUMERATION" value="AIPS_PLAT_CLK"/>
+                      </d:ctr>
                     </d:lst>
                   </d:ctr>
                   <d:ctr name="McuClockSettingConfig_Standby" 

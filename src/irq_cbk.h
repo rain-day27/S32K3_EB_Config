@@ -11,7 +11,6 @@
 #include "Uart_ipw_Types.h"
 
 void Uart0_irq_handler(void);
-void uart0_event_cbk(uint8 Channel, Uart_EventType Event);
 void Pit0_Irq_handler(void);
 void Gpt_Pit0_Ch0_cbk(void);
 

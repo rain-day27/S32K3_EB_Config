@@ -32,7 +32,7 @@
 #include "log.h"
 #include "app.h"
 
-uint8_t start_print[16] = "app_init_ok\n";
+uint8_t start_print[16] = "MCU Reset\n";
 StaticTask_t xIdleTaskTCB;
 StackType_t uxIdleTaskStack[ configMINIMAL_STACK_SIZE ];
 void vApplicationGetIdleTaskMemory( StaticTask_t **ppxIdleTaskTCBBuffer, StackType_t **ppxIdleTaskStackBuffer, uint32_t *pulIdleTaskStackSize )
@@ -113,7 +113,12 @@ void user_init(void)
     /* Enable the Gpt notification to get the event for toggling the LED periodically */
     Gpt_EnableNotification(GptConf_GptChannelConfiguration_GptChannelConfiguration_Pit0_Ch0);
 
-    Uart_AsyncSend(0, start_print, strlen((char*)start_print));
+    /* uart config */
+    //IP_LPUART_0->CTRL &= ~(0xf<<24);				//close err check
+    IP_LPUART_0->CTRL |= LPUART_CTRL_IDLECFG(7);	//bus idle timeout
+    IP_LPUART_0->CTRL |= LPUART_CTRL_ILT(1);		//starts counting logic 1s as idle character bits
+    //IP_LPUART_0->CTRL |= LPUART_CTRL_ILIE(1);		//enable idle interrupt,EB already configured
+
 }
 void Mcal_Init(void)
 {
@@ -162,6 +167,8 @@ int main(void)
 	Mcal_Init();
 
     user_init();
+
+    while(get_sys_time() < 300);
 
     xTaskCreate((TaskFunction_t)log_print_task, "LOG START", 256, NULL, 1, NULL);
     xTaskCreate((TaskFunction_t)app_task, "APP START", 512, NULL, 1, NULL);

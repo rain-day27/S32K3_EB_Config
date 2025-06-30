@@ -102,6 +102,28 @@ void app_log(log_level_e level, const char* tag, const char* fmt, ...)
     app_debug(log_buffer, (uint16_t)len);
 }
 
+void debug_print(const char* fmt, ...)
+{
+	uint16_t str_len;
+	uint8_t str_buff[100];
+	va_list args;
+
+	va_start(args, fmt);
+	str_len = vsnprintf((char*)str_buff, 100, fmt, args);
+	va_end(args);
+
+	if(str_len)
+	{
+		Uart_SyncSend(UART0_CHANNL, str_buff, str_len, 0xffff);
+	}
+}
+
+void creat_handfault(void)
+{
+	uint8_t arr[8] = {0};
+	memset(arr, 0, 16);
+}
+
 void log_print_init(void)
 {
 	fifo_init(&log_tx_fifo, log_tx_buff, sizeof(log_tx_buff));
@@ -126,6 +148,8 @@ void log_print_task(void* param)
 
 		if(count%100==0)	//1000ms
 		{
+			creat_handfault();
+
 			//LOG_DEBUG("run time %ds", count/100);
 			uart0_rx_handle();
 		}

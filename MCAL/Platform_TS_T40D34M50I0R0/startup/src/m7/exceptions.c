@@ -94,7 +94,15 @@ void NMI_Handler(void)
 }
 void HardFault_Handler(void)
 {
-    while(TRUE){};
+    //while(TRUE){};
+    __asm volatile
+    (
+        "tst lr, #4                                   \n"
+        "ite eq                                       \n"
+        "mrseq r0, msp                                \n" // msp if exception from thread mode
+        "mrsne r0, psp                                \n" // psp if exception from handler mode
+        "b hard_fault_c_handler                       \n"
+    );
 }
 void MemManage_Handler(void)
 {

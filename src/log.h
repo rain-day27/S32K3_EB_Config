@@ -19,6 +19,7 @@ typedef enum {
 
 void log_print_init(void);
 void log_print_task(void* param);
+void debug_print(const char* fmt, ...);
 void app_log(log_level_e level, const char* tag, const char* fmt, ...);
 void Uart_TxRxCallback(uint8 Channel, Uart_EventType Event);
 
